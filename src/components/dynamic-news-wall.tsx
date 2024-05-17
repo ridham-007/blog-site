@@ -4,6 +4,7 @@ import { Card } from "./ui/card";
 import Link from "next/link";
 import ImageWithFallback from "./image-with-fallback";
 import { useRouter } from "next/navigation";
+import { GoChevronRight } from "react-icons/go";
 
 
 export interface NewsWallProps {
@@ -28,19 +29,19 @@ export default function DynamicNewsWall(props: NewsWallProps) {
   }
 
   return (
-    <Card className="flex flex-col h-auto p-5 rounded-lg border-0 border-t-[5px] border-[var(--primary)] news">
-      <div className="text-[20px] font-bold md:text-[22px]">{props.title}</div>
+    <Card className="flex flex-col h-auto p-5 rounded-lg border-0 border-t-[4px] border-[var(--primary)] news">
+      <div className="flex items-center text-[20px] font-semibold md:text-[20px] text-foreground pb-2 cursor-pointer">{props.title}<GoChevronRight size={24} className="ml-3"/></div>
       {props.news?.map((cur: any, index) => {
         return (
           <div className="flex flex-col" key={`${props.title}-${index}`} onClick={() => { router.push(cur.slug) }}>
-            <hr className="py-2"></hr>
+            <hr className="py-2 text-[#e3e3e3]"></hr>
             <div
               key={`${cur.title}-${index}`}
               className="flex flex-row items-start cursor-pointer gap-[10px]"
             >
               <div className="flex flex-col basis-[80%] min-h-[40px] gap-[5px] overflow-hidden">
                 <div className="flex flex-grow font-medium basis-full flex-col">
-                  <p className="text-[14px] md:text-[14px] text-ellipsis line-clamp-2">
+                  <p className="text-[14px] text-foreground  md:text-[14px] text-ellipsis line-clamp-2 font-semibold">
                     {cur?.title}
                   </p>
                 </div>
@@ -49,7 +50,7 @@ export default function DynamicNewsWall(props: NewsWallProps) {
                 <ImageWithFallback alt={`article-placeholder-${index}`} src={cur?.image}></ImageWithFallback>
               </div>
             </div>
-            <div className="flex text-sm font-normal gap-2 whitespace-nowrap py-1">
+            <div className="flex text-sm font-normal gap-2 whitespace-nowrap py-1 text-[#444746]">
               {formatDate(cur?.createdAt)}
               <Link href={'#'} className="font-medium">Read</Link>
             </div>

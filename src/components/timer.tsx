@@ -32,11 +32,11 @@ export default function Timer() {
   
   return (
     
-        <div className="flex justify-center w-32 items-center border-[1px] text-[14px] bg-black border-gray-100 rounded-md gap-1 py-3">
+        <div className="flex justify-center w-32 items-center border-[1px] text-[14px] bg-[#FAF0E3] border-gray-100 rounded-md gap-1 py-3">
        {timeValues.map((value, index) => (
           <div
             key={index}
-            className="text-white"
+            className="text-black"
           >
             {value}
           </div>

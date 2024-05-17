@@ -18,11 +18,16 @@ export default function HeaderMiddle() {
         </Link>
       </div>
       <div className="flex gap-x-6 !pl-4">
-        {navItems.map((item, index) => (
-          <h4 key={index} className="nav-item">
-            <Link href={item.link}>{item.text}</Link>
+        {navItems.map((item, index) => { 
+          console.log(item.link);
+          
+          return (
+          <h4 key={index} className='nav-item'>
+            <Link href={item.link}>
+              {item.text}
+              </Link>
           </h4>
-        ))}
+        )})}
       </div>
     </section>
   );

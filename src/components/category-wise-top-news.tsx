@@ -37,11 +37,11 @@ const router = useRouter();
                     ></ImageWithFallback>
                   </div>
                 </CardTitle>
-                <CardDescription className="flex w-[100%] text-ellipsis line-clamp-3 text-foreground]">
-                  {item.description}
+                <CardDescription className="flex w-[100%] text-sm text-foreground text-ellipsis line-clamp-3">
+                  {item.description}  
                 </CardDescription>
               </CardHeader>
-              <CardDescription className="flex px-2 line-clamp-2">
+              <CardDescription className="flex text-[16px] text-foreground font-medium line-clamp-2 px-2">
                 {item?.title}
               </CardDescription>
             </Card>
