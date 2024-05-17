@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Suspense } from "react";
-import { GetPopularNews, GetRecentNews } from "./[...slug]/actions";
+import { GetPopularNews, GetRecentNews, LoadContentUsingSlug } from "./[...slug]/actions";
 import { DynamicNewsWallSkeleton } from "@/components/dynamic-news-wall";
 import CategoryData from "@/components/cataegoryData";
 import TopCategory from "@/components/sports";
@@ -10,8 +10,7 @@ export default function Home() {
   return (
     <main className="flex w-full flex-wrap gap-2 px-3">
       <section className="flex flex-col flex-1 basis-[100%] sm:basis-[68%] gap-4">
-        <TopCategory/>
-        <CategoryData/>
+        <LoadContentUsingSlug slug={'how-to-take-professional-travel-photos'}></LoadContentUsingSlug>
       </section>
       <section className="flex flex-col flex-1 basis-[100%] sm:basis-[28%] px-2 gap-4">
         <Suspense fallback={<DynamicNewsWallSkeleton label="Recent" />}>
