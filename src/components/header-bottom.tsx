@@ -28,7 +28,7 @@ import Timer from "./timer";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-const SEPARATION_LENGTH = 5;
+const SEPARATION_LENGTH = 9;
 
 export default function HeaderBottom(props: any, req: any) {
   const pathname = usePathname();

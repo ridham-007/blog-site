@@ -25,23 +25,25 @@ const router = useRouter();
           return (
             <Card
               key={`CategoryWiseTopNews-${index}`}
-              className="flex flex-col flex-1 lg:basis-[32%] sm:basis-[49%] basis-[100%] lg:max-w-[32%] sm:max-w-[49%] cursor-pointer p-1 gap-2 rounded-sm"
+              className="flex flex-col flex-1 lg:basis-[32%] sm:basis-[49%] basis-[100%] lg:max-w-[32%] sm:max-w-[49%] cursor-pointer p-1 rounded-sm"
               onClick={() => handleArticleOpen(item)}
             >
-              <CardHeader className="flex flex-col basis-[90%] flex-grow-0 px-2 py-3">
-                <CardTitle className="flex basis-[70%] flex-grow-0 flex-col">
+              <CardHeader className="flex flex-col basis-[90%] flex-1 px-2 py-3">
+                <CardTitle className="flex basis-[70%] flex-1 flex-col">
                   <div className="block w-full h-full relative">
                     <ImageWithFallback
                       alt={`CategoryWiseTopNews-${index}-alt`}
-                      src={item?.image}
+                      src={item?.featureImage}
                     ></ImageWithFallback>
                   </div>
                 </CardTitle>
-                <CardDescription className="flex w-[100%] text-sm text-foreground text-ellipsis line-clamp-3">
-                  {item.description}  
-                </CardDescription>
+                {item.description && (
+                  <CardDescription className="flex w-[100%] text-sm text-foreground text-ellipsis line-clamp-3">
+                    {item.description}
+                  </CardDescription>
+                )}
               </CardHeader>
-              <CardDescription className="flex text-[16px] text-foreground font-medium line-clamp-2 px-2">
+              <CardDescription className="flex text-[16px] text-foreground font-medium line-clamp-2 px-2 pb-2">
                 {item?.title}
               </CardDescription>
             </Card>

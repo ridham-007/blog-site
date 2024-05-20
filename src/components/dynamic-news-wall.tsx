@@ -11,7 +11,7 @@ export interface NewsWallProps {
   title: string
   news: {
     title: string;
-    image: string;
+    featureImage: string;
     createdAt?: string;
     slug: string;
   }[];
@@ -47,7 +47,7 @@ export default function DynamicNewsWall(props: NewsWallProps) {
                 </div>
               </div>
               <div className="flex basis-[20%] overflow-hidden w-full h-full">
-                <ImageWithFallback alt={`article-placeholder-${index}`} src={cur?.image}></ImageWithFallback>
+                <ImageWithFallback alt={`article-placeholder-${index}`} src={cur?.featureImage}></ImageWithFallback>
               </div>
             </div>
             <div className="flex text-sm font-normal gap-2 whitespace-nowrap py-1 text-[#444746]">

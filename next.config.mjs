@@ -4,15 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.google.com",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.britannica.com",
-      },
-      {
-        protocol: "http",
-        hostname: "localhost",
+        hostname: "*",
       },
     ],
   },
