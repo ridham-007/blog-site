@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Logo from "./logo";
 import Link from "next/link";
 
@@ -10,6 +10,11 @@ export default function HeaderMiddle() {
     { text: "About Us", link: "/about-us" }
   ];
 
+  const [selectedItem, setSelectedItem] = useState(null);
+  const handleChange = (index: any) => {
+    setSelectedItem(index);
+  }
+
   return (
     <section className="flex flex-wrap w-full px-[20px] py-[5px] justify-between items-center gap-[15px]">
       <div className="block w-[200px] h-[50px] relative">
@@ -18,16 +23,17 @@ export default function HeaderMiddle() {
         </Link>
       </div>
       <div className="flex gap-x-6 !pl-4">
-        {navItems.map((item, index) => { 
-          console.log(item.link);
-          
+        {navItems.map((item, index) => {
           return (
-          <h4 key={index} className='nav-item'>
-            <Link href={item.link}>
-              {item.text}
+            <h4 key={index} className={`nav-item ${selectedItem === index ? "selected" : ""}`}>
+              <Link href={item.link}
+                onClick={() => handleChange(index)}
+              >
+                {item.text}
               </Link>
-          </h4>
-        )})}
+            </h4>
+          )
+        })}
       </div>
     </section>
   );

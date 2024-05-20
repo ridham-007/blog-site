@@ -37,7 +37,7 @@ export default function ContactForm() {
     }
 
     return (
-        <Card className="p-[20px]">
+        <Card className="p-[20px] dark:bg-[#202028]">
             <Form {...form}>
                 <form className="flex flex-col items-center space-y-8 w-[100%] p-[10px]" onSubmit={form.handleSubmit(handleSubmit)}>
                     <h1 className="text-[22px] font-medium">Contact Form</h1>

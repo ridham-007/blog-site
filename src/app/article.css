@@ -1,6 +1,5 @@
 .article-container {
     padding: 8px;
-    /* background-color: #f7f7f7; */
     background-color: white;
     border-radius: 10px;
     border: 1px solid hsl(var(--border));
@@ -19,6 +18,11 @@
     padding-top: 10px;
 }
 
+.dark .article-container h3 {
+    font-weight: 500;
+    color: #E5E5E5;
+}
+
 .article-container h4 {
     font-size: 17px;
     font-weight: 600;
@@ -26,12 +30,20 @@
     padding-bottom: 10px;
 }
 
+.dark .article-container h4 {
+    font-weight: 500;
+    color: #DDDDDD;
+}
+
 .article-container p {
     font-size: 15px;
-    font-weight: 400;
-    /* padding: 0px 13px 10px 6px; */
+    font-weight: 500;
     padding: 6px 12px;
     letter-spacing: 0.3px;
+}
+
+.dark .article-container p {
+    color: #b3b3b3;
 }
 
 .article-container .table {
@@ -164,12 +176,20 @@
 .article-container a {
     font-size: 15px;
     font-weight: 600;
-    color: #1968fe;
+    color: #7ba1e9;
+}
+
+.article-container :hover a {
+    color: #3476f0;
 }
 
 .article-container strong {
     font-size: 15px;
     font-weight: 700;
+}
+
+.dark .article-container strong {
+    color: #DDDDDD;
 }
 
 .article-container .col-1 {
