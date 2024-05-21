@@ -19,7 +19,6 @@ export async function GetCategoryShortPreview() {
     for (let i = 0; i < categories.length; i++) {
       try {
         const url = `${process.env.NEXT_PUBLIC_API_URL}/common/main-box/${categories[i].slug}`;
-        console.log(url);
         const categoryData = await fetch(url, {
           next: { revalidate: 60 },
         });
@@ -39,9 +38,9 @@ export async function GetCategoryShortPreview() {
 
     return arrayOfResponse.map((cur, index) => {
       if (index % 2 == 0) {
-        return <CategoryBannerTypeOne {...cur}></CategoryBannerTypeOne>;
+        return <CategoryBannerTypeOne key={`Banner-${index}`} {...cur}></CategoryBannerTypeOne>;
       } else {
-        return <CategoryBannerTypeTwo {...cur}></CategoryBannerTypeTwo>;
+        return <CategoryBannerTypeTwo key={`Banner-${index}`} {...cur}></CategoryBannerTypeTwo>;
       }
     });
   } catch (error) {
