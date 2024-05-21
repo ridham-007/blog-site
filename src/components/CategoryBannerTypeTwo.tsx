@@ -89,3 +89,74 @@ export default function CategoryBannerTypeTwo(props: any) {
     </Card>
   );
 }
+
+export function CategoryBannerTypeTwoSkeleton() {
+  return (
+    <Card className="flex flex-col w-full p-[20px] gap-[15px]">
+      <div className="flex justify-between items-center border-b border-[#e3e3e3] pb-2">
+        <div className="flex items-center">
+          <div className="w-[80px] h-[30px] bg-[#d1d5db] animate-pulse rounded-sm"></div>
+          <GoChevronRight size={24} className="ml-3" />
+        </div>
+        <p className="text-[16px] font-semibold text-foreground cursor-pointer">
+          See all
+        </p>
+      </div>
+
+      <div className="flex flex-row flex-wrap w-[100%] md:flex-nowrap gap-[20px]">
+        <div className="flex basis-full md:basis-[45%] flex-shrink-0 flex-col">
+          {Array(1)
+            .fill(null)
+            ?.map((index) => {
+              return (
+                <Card
+                  key={`CategoryWiseTopNewsSkeleton-${index}`}
+                  className="flex flex-col flex-1 cursor-pointer rounded-sm"
+                >
+                  <CardHeader className="flex flex-col basis-[90%] px-2 py-2">
+                    <CardTitle className="flex basis-[70%] flex-col">
+                      <div className="block w-full h-full relative">
+                        <ImageWithFallback
+                          alt={`CategoryWiseTopNews-${index}-alt`}
+                          src={'/preview.jpg'}
+                        ></ImageWithFallback>
+                      </div>
+                    </CardTitle>
+                  </CardHeader>
+                  <div className="flex flex-col basis-[10%] px-2 py-2 gap-1">
+                    <div className="w-full h-4 bg-[#d1d5db] animate-pulse rounded-sm"></div>
+                    <div className="w-full h-4 bg-[#d1d5db] animate-pulse rounded-sm"></div>
+                  </div>
+                </Card>
+              )
+            })}
+        </div>
+        <div className="flex flex-col basis-full flex-0 gap-[10px]">
+          {Array(4)
+            .fill(null)
+            ?.map((index) => {
+              return (
+                <div key={index} className="flex flex-col">
+                  <div className="flex gap-2 overflow-hidden">
+                    <Image
+                      src="/preview.jpg"
+                      alt="img not found"
+                      width={50}
+                      height={50}
+                      className="w-[80px] h-[60px] rounded-sm object-cover"
+                    />
+                    <div className="flex flex-col gap-1 flex-1 w-full">
+                      <div className="h-[17px] rounded-sm bg-[#d1d5db] animate-pulse"></div>
+                      <div className="h-[17px] rounded-sm bg-[#d1d5db] animate-pulse"></div>
+                      <div className="h-[17px] rounded-sm bg-[#d1d5db] animate-pulse"></div>
+                    </div>
+                  </div>
+                  <hr className="my-[10px] text-[#e3e3e3]" />
+                </div>
+              )
+            })}
+        </div>
+      </div>
+    </Card>
+  )
+}
