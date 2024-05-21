@@ -71,6 +71,7 @@ export async function GetRecentNews() {
       return <DynamicNewsWallSkeleton label="Recent" />;
     }
   } catch (e) {
+    console.log(e);
     return <DynamicNewsWallSkeleton label="Recent" />;
   }
 }
