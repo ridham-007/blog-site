@@ -2,8 +2,9 @@
 
 import { useRouter } from "next/navigation";
 import { GoChevronRight } from "react-icons/go";
-import { Card } from "./ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import Image from "next/image";
+import ImageWithFallback from "./image-with-fallback";
 
 const data = [
   {
@@ -14,7 +15,11 @@ const data = [
   {
     image: "/preview.jpg",
     title:
-      "If you want to stay young for a long time then eat these 3 foods daily, signs of old age will go away.",
+      "If you want to stay young for a long time then eat these 3 foods daily, signs of old age will go away.If you want to stay young for a long time then eat these 3 foods daily, signs of old age will go away.",
+  },
+  {
+    image: "/preview.jpg",
+    title: "Are you cooking wrongly? ICMR told the right way to cook food.",
   },
   {
     image: "/preview.jpg",
@@ -34,27 +39,35 @@ export default function CategoryBannerTypeTwo(props: any) {
           See all
         </p>
       </div>
-      <div className="flex flex-col lg:flex-row w-full gap-4">
-        <div className="w-full lg:w-[50%]">
-          <Image
-            src="/about1.jpg"
-            alt="category image"
-            quality={80}
-            width={250}
-            height={100}
-            className="w-full h-auto lg:max-h-[270px] object-cover"
-          />
-          <div className="text-[17px] text-foreground md:text-[19px] font-bold p-[5px]">
-            5 Natural Wonders in The US to Check Out This Summer
-          </div>
+      <div className="flex flex-row flex-wrap w-[100%] md:flex-nowrap gap-[20px]">
+        <div className="flex basis-full md:basis-[45%] flex-shrink-0 flex-col">
+          {[data[0]].map((item: any, index: any) => (
+            <Card
+              key={`CategoryWiseTopNews-${index}`}
+              className="flex flex-col flex-1 cursor-pointer rounded-sm"
+            >
+              <CardHeader className="flex flex-col basis-[90%] flex-1 px-2 py-3">
+                <CardTitle className="flex basis-[70%] flex-1 flex-col">
+                  <div className="block w-full h-full relative">
+                    <ImageWithFallback
+                      alt={`CategoryWiseTopNews-${index}-alt`}
+                      src={item?.featureImage}
+                    ></ImageWithFallback>
+                  </div>
+                </CardTitle>
+              </CardHeader>
+              <div className="flex text-[16px] text-foreground font-medium overflow-hidden px-2 pb-2">
+                <CardDescription className="line-clamp-2">
+                  {item?.title}
+                </CardDescription>
+              </div>
+            </Card>
+          ))}
         </div>
-        <div className="flex flex-col w-full lg:w-[50%]">
+        <div className="flex flex-col basis-full flex-0 gap-[10px]">
           {data.map((cur: any, index: number) => (
-            <div key={index}>
-              <div
-                className="flex px-[10px] cursor-pointer text-[16px] text-foreground font-medium gap-[20px] items-center"
-                onClick={() => router.push(cur.slug)}
-              >
+            <div key={index} className="flex flex-col">
+              <div className="flex gap-2 overflow-hidden">
                 <Image
                   src="/preview.jpg"
                   alt="img not found"
@@ -62,9 +75,13 @@ export default function CategoryBannerTypeTwo(props: any) {
                   height={50}
                   className="w-[80px] h-[60px] rounded-sm object-cover"
                 />
-                {cur?.title}
+                <div className="flex flex-col overflow-hidden">
+                  <p className="text-[14px] text-ellipsis line-clamp-3">
+                    {cur?.title}
+                  </p>
+                </div>
               </div>
-              <hr className="my-[15px] text-[#e3e3e3]" />
+              <hr className="my-[10px] text-[#e3e3e3]" />
             </div>
           ))}
         </div>
