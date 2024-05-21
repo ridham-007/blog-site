@@ -31,8 +31,8 @@ export default function Disclaimer() {
             <p>If you have any questions about this Disclaimer, You can contact Us:</p>
             <ul>
                 <span className="flex gap-[10px]">By email:
-                    <a key="email-link" className="text-[#1968fe] font-medium" href="mailto:contact@inshorten.com">
-                        contact@inshorten.com
+                    <a key="email-link" className="text-[#1968fe] font-medium" href="mailto:contact@justreadinside.com">
+                        contact@justreadinside.com
                     </a>
                 </span>
             </ul>

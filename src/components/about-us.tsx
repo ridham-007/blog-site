@@ -3,11 +3,11 @@ import { Card } from "./ui/card";
 
 export default function AboutUs() {
   const data = [
-    "Welcome to Inshorten, the reliable place for latest news and articles on various topics. We aim at giving readers content that is both engaging and informative touching on everything from what is happening today, via editorials down to opinions from experts.",
-    "Inshorten utilizes innovative algorithms and procedures for data processing meant for the automatic production of an array of news articles meant for catering for the diverse information needs of its consumers. It is a platform assembled to collect, analyze and present it in a manner that is appealing to the audience.",
+    "Welcome to JustReadInside, the reliable place for latest news and articles on various topics. We aim at giving readers content that is both engaging and informative touching on everything from what is happening today, via editorials down to opinions from experts.",
+    "JustReadInside utilizes innovative algorithms and procedures for data processing meant for the automatic production of an array of news articles meant for catering for the diverse information needs of its consumers. It is a platform assembled to collect, analyze and present it in a manner that is appealing to the audience.",
     "Our whole staff of diligent professionals is dedicated to highest precision and excellence in our way of producing stuffs. We realize how it is significant to convey dependable and important data hence in each paper authored we endeavor to observe this.",
     "Our readers are recipients of important knowledge that we enthusiastically acquire using technology for analysis. To meet the needs of our audience, we plan to continually improve and upgrade our content creation potential.",
-    "We are grateful that you have chosen Inshorten as your main source of news and information. Your backing matters to us, and we promise to keep providing quality material that caters for your preferences.",
+    "We are grateful that you have chosen JustReadInside as your main source of news and information. Your backing matters to us, and we promise to keep providing quality material that caters for your preferences.",
   ]
 
   // const ourMission = [
