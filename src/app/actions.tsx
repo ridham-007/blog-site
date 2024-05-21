@@ -1,7 +1,7 @@
 "use server";
 
-import CategoryBannerTypeOne, { CategoryBannerTypeOneSkeleton } from "@/components/categoryBannerTypeOne";
-import CategoryBannerTypeTwo, { CategoryBannerTypeTwoSkeleton } from "@/components/categoryBannerTypeTwo";
+import CategoryBannerTypeOne, { CategoryBannerTypeOneSkeleton } from "@/components/category-banner-type-one";
+import CategoryBannerTypeTwo, { CategoryBannerTypeTwoSkeleton } from "@/components/category-banner-type-two";
 
 function LoadPreviewForCategoriesShimmer(){
   return (

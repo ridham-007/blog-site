@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { GetPopularNews, GetRecentNews } from "./[...slug]/actions";
 import { DynamicNewsWallSkeleton } from "@/components/dynamic-news-wall";
-import { CategoryBannerTypeOneSkeleton } from "@/components/categoryBannerTypeOne";
-import { CategoryBannerTypeTwoSkeleton } from "@/components/categoryBannerTypeTwo";
+import { CategoryBannerTypeOneSkeleton } from "@/components/category-banner-type-one";
+import { CategoryBannerTypeTwoSkeleton } from "@/components/category-banner-type-two";
 import { GetCategoryShortPreview } from "./actions";
 
 export default function Home() {
