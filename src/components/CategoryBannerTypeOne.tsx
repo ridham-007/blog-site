@@ -27,7 +27,7 @@ const data = [
 export default function CategoryBannerTypeOne(props: any) {
   const router = useRouter();
   return (
-    <Card className="w-full gap-[16px] flex flex-col p-[20px]">
+    <Card className="w-full gap-[15px] flex flex-col p-[20px]">
       <div className="flex justify-between items-center border-b border-[#e3e3e3] pb-2">
         <p className="flex items-center text-[20px] text-[#1867dc] font-semibold cursor-pointer">
           Sports <GoChevronRight size={24} className="ml-3" />
@@ -42,7 +42,7 @@ export default function CategoryBannerTypeOne(props: any) {
             return (
               <div key={index} className="flex flex-col overflow-hidden">
                 <p
-                  className="text-[14px] cursor-pointer text-[#444746] font-semibold text-ellipsis line-clamp-3"
+                  className="text-[14px] cursor-pointer text-[#444746] text-ellipsis line-clamp-3"
                   onClick={() => {
                     router.push(cur.slug);
                   }}
