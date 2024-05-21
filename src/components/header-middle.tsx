@@ -22,7 +22,7 @@ export default function HeaderMiddle() {
           <Logo place="header"></Logo>
         </Link>
       </div>
-      <div className="flex gap-x-6 !pl-4">
+      <div className="flex gap-x-6">
         {navItems.map((item, index) => {
           return (
             <h4 key={index} className={`nav-item ${selectedItem === index ? "selected" : ""}`}>

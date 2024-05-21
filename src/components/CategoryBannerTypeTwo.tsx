@@ -5,43 +5,38 @@ import { GoChevronRight } from "react-icons/go";
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import Image from "next/image";
 import ImageWithFallback from "./image-with-fallback";
+import Link from "next/link";
 
-const data = [
-  {
-    image: "/preview.jpg",
-    title:
-      "These things contain more calcium than milk, make bones as strong as iron.",
-  },
-  {
-    image: "/preview.jpg",
-    title:
-      "If you want to stay young for a long time then eat these 3 foods daily, signs of old age will go away.If you want to stay young for a long time then eat these 3 foods daily, signs of old age will go away.",
-  },
-  {
-    image: "/preview.jpg",
-    title: "Are you cooking wrongly? ICMR told the right way to cook food.",
-  },
-  {
-    image: "/preview.jpg",
-    title: "Are you cooking wrongly? ICMR told the right way to cook food.",
-  },
-];
-
-export default function CategoryBannerTypeTwo(props: any) {
+export interface CategoryBannerTypeTwoProps {
+  title: string;
+  slug: string;
+  news: {
+    title: string;
+    featureImage: string;
+    createdAt?: string;
+    slug: string;
+  }[];
+}
+export default function CategoryBannerTypeTwo(
+  props: CategoryBannerTypeTwoProps
+) {
   const router = useRouter();
   return (
     <Card className="flex flex-col w-full p-[20px] gap-[15px]">
       <div className="flex justify-between items-center border-b border-[#e3e3e3] pb-2">
-        <p className="flex items-center text-[20px] text-[#26a79a] font-semibold cursor-pointer">
-          Travel <GoChevronRight size={24} className="ml-3" />
-        </p>
+        <Link
+          href={`/${props.slug ?? ""}`}
+          className="flex items-center text-[20px] text-[#26a79a] font-semibold cursor-pointer"
+        >
+          {props.title.trim()} <GoChevronRight size={24} className="ml-3" />
+        </Link>
         <p className="text-[16px] font-semibold text-foreground cursor-pointer">
           See all
         </p>
       </div>
       <div className="flex flex-row flex-wrap w-[100%] md:flex-nowrap gap-[20px]">
         <div className="flex basis-full md:basis-[45%] flex-shrink-0 flex-col">
-          {[data[0]].map((item: any, index: any) => (
+          {props.news.slice(0, 1).map((item: any, index: any) => (
             <Card
               key={`CategoryWiseTopNews-${index}`}
               className="flex flex-col flex-1 cursor-pointer rounded-sm"
@@ -65,16 +60,15 @@ export default function CategoryBannerTypeTwo(props: any) {
           ))}
         </div>
         <div className="flex flex-col basis-full flex-0 gap-[10px]">
-          {data.map((cur: any, index: number) => (
+          {props.news.slice(1, 5).map((cur: any, index: number) => (
             <div key={index} className="flex flex-col">
               <div className="flex gap-2 overflow-hidden">
-                <Image
-                  src="/preview.jpg"
-                  alt="img not found"
-                  width={50}
-                  height={50}
-                  className="w-[80px] h-[60px] rounded-sm object-cover"
-                />
+                <div className="bloc min-w-[80px] max-w-[80px] h-[60px] rounded-sm object-fill">
+                  <ImageWithFallback
+                    src={cur.featureImage}
+                    alt=""
+                  ></ImageWithFallback>
+                </div>
                 <div className="flex flex-col overflow-hidden">
                   <p className="text-[14px] text-ellipsis line-clamp-3">
                     {cur?.title}
@@ -118,7 +112,7 @@ export function CategoryBannerTypeTwoSkeleton() {
                       <div className="block w-full h-full relative">
                         <ImageWithFallback
                           alt={`CategoryWiseTopNews-${index}-alt`}
-                          src={'/preview.jpg'}
+                          src={"/preview.jpg"}
                         ></ImageWithFallback>
                       </div>
                     </CardTitle>
@@ -128,7 +122,7 @@ export function CategoryBannerTypeTwoSkeleton() {
                     <div className="w-full h-4 bg-[#d1d5db] animate-pulse rounded-sm"></div>
                   </div>
                 </Card>
-              )
+              );
             })}
         </div>
         <div className="flex flex-col basis-full flex-0 gap-[10px]">
@@ -153,10 +147,10 @@ export function CategoryBannerTypeTwoSkeleton() {
                   </div>
                   <hr className="my-[10px] text-[#e3e3e3]" />
                 </div>
-              )
+              );
             })}
         </div>
       </div>
     </Card>
-  )
+  );
 }
