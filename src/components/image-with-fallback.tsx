@@ -11,7 +11,7 @@ const ImageWithFallback = (props: ImageWithFallbackProps) => {
   return (
     <Image
       alt={props.alt}
-      src={imgSrc}
+      src={imgSrc ?? ""}
       width={160}
       height={100}
       quality={10}
