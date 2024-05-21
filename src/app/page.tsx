@@ -25,7 +25,7 @@ export default function Home() {
   );
 }
 
-export function LoadPreviewForCategoriesShimmer(){
+function LoadPreviewForCategoriesShimmer(){
   return (
     <>
       <CategoryBannerTypeOneSkeleton/>

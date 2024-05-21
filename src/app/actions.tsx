@@ -1,8 +1,18 @@
 "use server";
 
-import CategoryBannerTypeOne from "@/components/categoryBannerTypeOne";
-import { LoadPreviewForCategoriesShimmer } from "./page";
-import CategoryBannerTypeTwo from "@/components/categoryBannerTypeTwo";
+import CategoryBannerTypeOne, { CategoryBannerTypeOneSkeleton } from "@/components/categoryBannerTypeOne";
+import CategoryBannerTypeTwo, { CategoryBannerTypeTwoSkeleton } from "@/components/categoryBannerTypeTwo";
+
+function LoadPreviewForCategoriesShimmer(){
+  return (
+    <>
+      <CategoryBannerTypeOneSkeleton/>
+      <CategoryBannerTypeTwoSkeleton/>
+      <CategoryBannerTypeOneSkeleton/>
+      <CategoryBannerTypeTwoSkeleton/>
+    </>
+  )
+}
 
 export async function GetCategoryShortPreview() {
   try {
