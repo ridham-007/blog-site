@@ -171,9 +171,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center border-t text-[#b7b7b7] border-gray-300 mt-8 pt-5">
-        <FaRegCopyright size={24} className="mr-2 text-[#b7b7b7]" /> 2024 by
-        inshorten. All Right Reserved.
+      <div className="flex justify-center border-t text-[#b7b7b7] border-gray-300 mt-8 pt-5 items-center">
+        <FaRegCopyright size={10} className="mx-1 text-[#b7b7b7]" /> 2024 by
+        JustReadInside. All Right Reserved.
       </div>
     </footer>
   );
