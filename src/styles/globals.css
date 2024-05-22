@@ -7,7 +7,7 @@
     /* --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%; */
 
-    --background:220, 33%, 97%;
+    --background: 220, 33%, 97%;
     --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
@@ -80,12 +80,11 @@
 }
 
 .dark .article-container {
-  background-color: #1e2128;
-  color: #E5E5E6;
+  background-color: #13161c;
 }
 
 .dark .header {
-  background-color: #1e2128;
+  background-color: #202028;
   box-shadow: 0px 2px 4px 0px rgba(75, 75, 75, 0.5);
 }
 

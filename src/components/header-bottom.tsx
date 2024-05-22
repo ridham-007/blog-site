@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { IoIosArrowDown } from "react-icons/io";
 import {
@@ -20,23 +20,23 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 import Temperature from "./Temperature";
 import Logo from "./logo";
 import { Button } from "./ui/button";
 import Timer from "./timer";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
-const SEPARATION_LENGTH = 2;
+const SEPARATION_LENGTH = 9;
 
 export default function HeaderBottom(props: any, req: any) {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleChange = (item: any) => {
-    setSelectedCategory(item.name);
-    setIsOpen(false);
-  }
+  const pathname = usePathname();
+  const highlightSelectedTab = (item: any) => {
+    return `${
+      pathname === `/${item?.slug}` ? "!bg-primary !text-accent" : null
+    }`;
+  };
 
   return (
     <section className="flex justify-between gap-[5px] w-[100%] h-auto px-[20px] items-center">
@@ -52,45 +52,17 @@ export default function HeaderBottom(props: any, req: any) {
                   passHref
                   key={`menubar-${index}`}
                 >
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={`${navigationMenuTriggerStyle()} ${highlightSelectedTab(
+                      item
+                    )}`}
+                  >
                     {item?.name}
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             ))}
         </NavigationMenuList>
-        {[...props.categories].slice(SEPARATION_LENGTH).length > 0 && (
-          <DropdownMenu>
-            <DropdownMenuTrigger className={`flex items-center text-[14px] font-medium px-[5px] ${selectedCategory ? "bg-[#f1fcff] p-[8px] w-min rounded-sm" : ""}`}
-              onClick={() => setIsOpen(true)}
-            >
-              {selectedCategory ? (selectedCategory) : (
-                <>
-                  More <IoIosArrowDown />
-                </>
-              )}
-            </DropdownMenuTrigger>
-            {isOpen && (
-              <DropdownMenuContent>
-                {[...props.categories]
-                  .slice(SEPARATION_LENGTH)
-                  .map((item: any, index) => (
-                    <>
-                      <Link href={item?.slug} legacyBehavior passHref>
-                        <DropdownMenuItem
-                          key={`menu-drop-down-${index}`}
-                          className="capitalize"
-                          onClick={() => handleChange(item)}
-                        >
-                          {item?.name}
-                        </DropdownMenuItem>
-                      </Link>
-                    </>
-                  ))}
-              </DropdownMenuContent>
-            )}
-          </DropdownMenu>
-        )}
       </NavigationMenu>
 
       <div className="flex md:hidden">
@@ -109,27 +81,20 @@ export default function HeaderBottom(props: any, req: any) {
             </div>
             <div className="flex-col gap-[10px] md:gap-[5px]">
               {[...props.categories].map((item, index) => (
-                <Link
-                  href={item?.slug}
-                  key={index}
-                  className="flex cursor-pointer justify-center items-center w-full py-1"
-                >
-                  {item?.name}
-                </Link>
+                <DrawerClose asChild key={index}>
+                  <Link
+                    href={item?.slug}
+                    className="flex cursor-pointer justify-center items-center w-full py-1"
+                  >
+                    {item?.name}
+                  </Link>
+                </DrawerClose>
               ))}
             </div>
           </DrawerContent>
         </Drawer>
       </div>
-
-      <div className="flex items-center gap-[10px]">
-        <Timer />
-        <div className="flex items-center gap-[5px] lg:gap-[10px] ">
-          <ThermometerSun />
-          <Temperature />
-        </div>
-      </div>
-    </section >
+    </section>
   );
 }
 

@@ -116,18 +116,17 @@ export async function generateMetadata(
         );
         const responseData = await res.json();
         const { metaData } = responseData?.data;
-
         return {
           title: metaData?.name || metaData?.title || "InShorten",
           description: metaData?.seo_description || metaData?.description || "InShorten",
           keywords: metaData?.keywords && [...metaData?.keywords],
           openGraph: {
-            url: metaData?.openGraph?.url || metaData?.openGraph?.ogUrl,
-            type: metaData?.openGraph?.type || metaData?.openGraph?.ogType,
-            title: metaData?.openGraph?.title || metaData?.openGraph?.ogTitle,
-            locale: metaData?.openGraph?.locale || metaData?.openGraph?.ogLocale,
-            siteName: metaData?.openGraph?.site_name || metaData?.openGraph?.ogSiteName,
-            description: metaData?.openGraph?.description || metaData?.openGraph?.ogDescription,
+            ...((metaData?.openGraph?.title || metaData?.openGraph?.ogTitle) && { title: metaData?.openGraph?.title || metaData?.openGraph?.ogTitle }),
+            ...((metaData?.openGraph?.description || metaData?.openGraph?.ogDescription) && { description: metaData?.openGraph?.description || metaData?.openGraph?.ogDescription }),
+            ...((metaData?.openGraph?.url || metaData?.openGraph?.ogUrl) && { url: metaData?.openGraph?.url || metaData?.openGraph?.ogUrl }),
+            ...((metaData?.openGraph?.type || metaData?.openGraph?.ogType) && { type: metaData?.openGraph?.type || metaData?.openGraph?.ogType || '' }),
+            ...((metaData?.openGraph?.locale || metaData?.openGraph?.ogLocale) && { locale: metaData?.openGraph?.locale || metaData?.openGraph?.ogLocale }),
+            ...((metaData?.openGraph?.site_name || metaData?.openGraph?.ogSiteName) && { siteName: metaData?.openGraph?.site_name || metaData?.openGraph?.ogSiteName }),
             images: [{
               url: metaData?.openGraph?.ogImage || ""
             }],

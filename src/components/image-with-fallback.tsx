@@ -11,10 +11,10 @@ const ImageWithFallback = (props: ImageWithFallbackProps) => {
   return (
     <Image
       alt={props.alt}
-      src={imgSrc}
+      src={imgSrc ?? ""}
       width={160}
       height={100}
-      quality={10}
+      unoptimized={true}
       priority
       layout="responsive"
       className="flex w-full h-0 min-h-full object-fill rounded-sm"

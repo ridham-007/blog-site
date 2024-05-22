@@ -1,17 +1,17 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { Suspense } from "react";
 import { GetPopularNews, GetRecentNews } from "./[...slug]/actions";
 import { DynamicNewsWallSkeleton } from "@/components/dynamic-news-wall";
-import CategoryData from "@/components/cataegoryData";
-import TopCategory from "@/components/sports";
+import { CategoryBannerTypeOneSkeleton } from "@/components/category-banner-type-one";
+import { CategoryBannerTypeTwoSkeleton } from "@/components/category-banner-type-two";
+import { GetCategoryShortPreview } from "./actions";
 
 export default function Home() {
   return (
     <main className="flex w-full flex-wrap gap-2 px-3">
       <section className="flex flex-col flex-1 basis-[100%] sm:basis-[68%] gap-4">
-        <TopCategory/>
-        <CategoryData/>
+        <Suspense fallback={<LoadPreviewForCategoriesShimmer/>}>
+          <GetCategoryShortPreview />
+        </Suspense>
       </section>
       <section className="flex flex-col flex-1 basis-[100%] sm:basis-[28%] px-2 gap-4">
         <Suspense fallback={<DynamicNewsWallSkeleton label="Recent" />}>
@@ -24,3 +24,15 @@ export default function Home() {
     </main>
   );
 }
+
+function LoadPreviewForCategoriesShimmer(){
+  return (
+    <>
+      <CategoryBannerTypeOneSkeleton/>
+      <CategoryBannerTypeTwoSkeleton/>
+      <CategoryBannerTypeOneSkeleton/>
+      <CategoryBannerTypeTwoSkeleton/>
+    </>
+  )
+}
+

@@ -2,7 +2,7 @@ import { Card } from "./ui/card";
 
 export default function Disclaimer() {
     return (
-        <Card className="flex flex-col h-full p-[20px]">
+        <Card className="flex flex-col h-full p-[20px] dark:bg-[#202028] dark:text-[#cecdcd]">
             <h1 className="flex justify-center text-[24px] font-bold p-[20px]">Disclaimer</h1>
             <p>The information contained on the Service is for general information purposes only.</p>
             <p>The Company assumes no responsibility for errors or omissions in the contents of the Service.</p><br />
@@ -31,8 +31,8 @@ export default function Disclaimer() {
             <p>If you have any questions about this Disclaimer, You can contact Us:</p>
             <ul>
                 <span className="flex gap-[10px]">By email:
-                    <a key="email-link" className="text-[#1968fe] font-medium" href="mailto:contact@inshorten.com">
-                        contact@inshorten.com
+                    <a key="email-link" className="text-[#1968fe] font-medium" href="mailto:contact@justreadinside.com">
+                        contact@justreadinside.com
                     </a>
                 </span>
             </ul>

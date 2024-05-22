@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cookies } from "next/headers"
 import Header from "./_header/page";

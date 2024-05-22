@@ -66,12 +66,13 @@ export async function GetRecentNews() {
     const responseData = await res.json();
     const { data } = responseData;
     if (Array.isArray(data) && data.length > 0) {
-      return <DynamicNewsWall title="Recent News" news={data} />;
+      return <DynamicNewsWall title="Recent Article" news={data} />;
     } else {
       return <DynamicNewsWallSkeleton label="Recent" />;
     }
   } catch (e) {
-    return <DynamicNewsWallSkeleton label="Popular" />;
+    console.log(e);
+    return <DynamicNewsWallSkeleton label="Recent" />;
   }
 }
 
@@ -86,7 +87,7 @@ export async function GetPopularNews() {
     const responseData = await res.json();
     const { data } = responseData;
     if (Array.isArray(data) && data.length > 0) {
-      return <DynamicNewsWall title="Popular News" news={data} />;
+      return <DynamicNewsWall title="Popular Article" news={data} />;
     } else {
       return <DynamicNewsWallSkeleton label="Popular" />;
     }

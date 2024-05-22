@@ -1,7 +1,7 @@
 import { Card } from "./ui/card";
 
 const terms = [
-    "These terms and conditions govern your use of inshorten (“inshorten”), which is operated by “inshorten”. By using the Website, you agree to be bound by these terms and conditions.",
+    "These terms and conditions govern your use of justreadinside (“justreadinside”), which is operated by “justreadinside”. By using the Website, you agree to be bound by these terms and conditions.",
     {
         key: "Content",
         value: [
@@ -22,7 +22,7 @@ const terms = [
         value: [
             <>
                 We take your privacy seriously. Our{' '}
-                <a href="https://www.inshorten.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#1968fe] font-medium cursor-pointer">Privacy Policy</a>{' '}
+                <a href="https://www.justreadinside.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#1968fe] font-medium cursor-pointer">Privacy Policy</a>{' '}
                 explains how we collect, use, and protect your personal information.
             </>
         ],
@@ -45,7 +45,7 @@ const terms = [
             "These terms and conditions shall be governed by and construed in accordance with the laws of the State of Gujarat, without regard to its conflict of laws principles.",
             "If you have any questions or concerns about these terms and conditions, please contact us",
             <span className="flex gap-[10px]" key={"email"}>email:
-                <a key="email-link" className="text-[#1968fe] font-medium" href="mailto:contact@inshorten.com">contact@inshorten.com</a>
+                <a key="email-link" className="text-[#1968fe] font-medium" href="mailto:contact@justreadinside.com">contact@justreadinside.com</a>
             </span>
         ],
     },
@@ -53,7 +53,7 @@ const terms = [
 
 export default function TermsConditions() {
     return (
-        <Card className="flex flex-col h-full p-[20px]">
+        <Card className="flex flex-col h-full p-[20px] dark:bg-[#202028] dark:text-[#cecdcd]">
             <h1 className="flex justify-center text-[24px] font-bold p-[20px]">
                 Terms & Conditions
             </h1>
