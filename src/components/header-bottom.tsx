@@ -81,10 +81,9 @@ export default function HeaderBottom(props: any, req: any) {
             </div>
             <div className="flex-col gap-[10px] md:gap-[5px]">
               {[...props.categories].map((item, index) => (
-                <DrawerClose asChild>
+                <DrawerClose asChild key={index}>
                   <Link
                     href={item?.slug}
-                    key={index}
                     className="flex cursor-pointer justify-center items-center w-full py-1"
                   >
                     {item?.name}
