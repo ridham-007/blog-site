@@ -30,9 +30,9 @@ export default function CategoryBannerTypeTwo(
         >
           {props.title.trim()} <GoChevronRight size={24} className="ml-3" />
         </Link>
-        <p className="text-[16px] font-semibold text-foreground cursor-pointer">
+        <Link href={`/${props.slug??''}`} className="text-[16px] font-semibold text-foreground cursor-pointer">
           See all
-        </p>
+        </Link>
       </div>
       <div className="flex flex-row flex-wrap w-[100%] md:flex-nowrap gap-[20px]">
         <div className="flex basis-full md:basis-[45%] flex-shrink-0 flex-col">
@@ -40,6 +40,7 @@ export default function CategoryBannerTypeTwo(
             <Card
               key={`CategoryWiseTopNews-${index}`}
               className="flex flex-col flex-1 cursor-pointer rounded-sm"
+              onClick={()=>router.push(`/${item.slug}`)}
             >
               <CardHeader className="flex flex-col basis-[90%] flex-1 px-2 py-3">
                 <CardTitle className="flex basis-[70%] flex-1 flex-col">
@@ -62,8 +63,8 @@ export default function CategoryBannerTypeTwo(
         <div className="flex flex-col basis-full flex-0 gap-[10px]">
           {props.news.slice(1, 5).map((cur: any, index: number) => (
             <div key={index} className="flex flex-col">
-              <div className="flex gap-2 overflow-hidden">
-                <div className="bloc min-w-[80px] max-w-[80px] h-[60px] rounded-sm object-fill">
+              <Link href={`/${cur.slug}`} className="flex gap-2 overflow-hidden cursor-pointer">
+                <div className="bloc min-w-[80px] max-w-[80px] rounded-sm object-fill">
                   <ImageWithFallback
                     src={cur.featureImage}
                     alt=""
@@ -74,7 +75,7 @@ export default function CategoryBannerTypeTwo(
                     {cur?.title}
                   </p>
                 </div>
-              </div>
+              </Link>
               <hr className="my-[10px] text-[#e3e3e3]" />
             </div>
           ))}

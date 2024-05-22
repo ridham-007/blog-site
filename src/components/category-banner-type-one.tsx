@@ -24,15 +24,15 @@ export default function CategoryBannerTypeOne(props: CategoryBannerTypeOneProps)
         <Link href={`/${props.slug??''}`} className="flex items-center text-[20px] text-[#1867dc] font-semibold cursor-pointer">
           {props.title.trim()} <GoChevronRight size={24} className="ml-3" />
         </Link>
-        <p className="text-[16px] font-semibold text-foreground cursor-pointer">
+        <Link href={`/${props.slug??''}`} className="text-[16px] font-semibold text-foreground cursor-pointer">
           See all
-        </p>
+        </Link>
       </div>
       <div className="flex flex-row flex-wrap w-[100%] md:flex-nowrap gap-[20px]">
         <div className="flex basis-full md:basis-[33%] flex-shrink-0 flex-col">
           {props.news.slice(0, 3).map((cur: any, index: number) => {
             return (
-              <div key={index} className="flex flex-col overflow-hidden">
+              <Link href={`/${cur.slug}`} key={index} className="flex flex-col overflow-hidden">
                 <p
                   className="text-[14px] cursor-pointer text-[#444746] text-ellipsis line-clamp-3"
                   onClick={() => {
@@ -42,7 +42,7 @@ export default function CategoryBannerTypeOne(props: CategoryBannerTypeOneProps)
                   {cur.title}
                 </p>
                 <hr className="my-[10px] text-[#e3e3e3]" />
-              </div>
+              </Link>
             );
           })}
         </div>
@@ -51,6 +51,7 @@ export default function CategoryBannerTypeOne(props: CategoryBannerTypeOneProps)
             <Card
               key={`CategoryWiseTopNews-${index}`}
               className="flex flex-col flex-1 cursor-pointer rounded-sm"
+              onClick={()=>router.push(`/${item.slug}`)}
             >
               <CardHeader className="flex flex-col basis-[90%] flex-1 px-2 py-3">
                 <CardTitle className="flex basis-[70%] flex-1 flex-col">

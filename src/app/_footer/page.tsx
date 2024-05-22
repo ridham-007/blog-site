@@ -110,7 +110,7 @@ export default function Footer() {
       <div className="flex flex-col lg:flex-row mt-5">
         <div className="flex flex-col w-full lg:w-[33%] px-4">
           <div className="mb-5 text-[14px] md:text-[16px] text-[#b7b7b7]">
-            The inshorten.com team comprises of experts in different
+            The justreadinside.com team comprises of experts in different
             fields, all with the same primary focus: helping our clients
             generate greater business by use of online services.
           </div>

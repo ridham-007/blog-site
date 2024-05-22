@@ -84,25 +84,6 @@ export default function HeaderTop({ data }: any) {
                 <Youtube className="h-[1.2rem] w-[1.2rem]" />
               </Link>
             </Button>
-            {theme == "light" ? (
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => setTheme("dark")}
-                aria-label="dark-theme"
-              >
-                <Moon className="h-[1.2rem] w-[1.2rem] scale-100 transition-all dark:rotate-0" />
-              </Button>
-            ) : (
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => setTheme("light")}
-                aria-label="light-theme"
-              >
-                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90" />
-              </Button>
-            )}
           </div>
         </div>
       </div>
