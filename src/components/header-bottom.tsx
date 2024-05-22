@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { IoIosArrowDown } from "react-icons/io";
 import {
@@ -20,7 +20,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 import Temperature from "./Temperature";
 import Logo from "./logo";
 import { Button } from "./ui/button";
@@ -32,9 +32,11 @@ const SEPARATION_LENGTH = 9;
 
 export default function HeaderBottom(props: any, req: any) {
   const pathname = usePathname();
-  const highlightSelectedTab = (item: any)=>{
-    return `${pathname === `/${item?.slug}` ? '!bg-primary !text-accent':null}`;
-  }
+  const highlightSelectedTab = (item: any) => {
+    return `${
+      pathname === `/${item?.slug}` ? "!bg-primary !text-accent" : null
+    }`;
+  };
 
   return (
     <section className="flex justify-between gap-[5px] w-[100%] h-auto px-[20px] items-center">
@@ -50,7 +52,11 @@ export default function HeaderBottom(props: any, req: any) {
                   passHref
                   key={`menubar-${index}`}
                 >
-                  <NavigationMenuLink className={`${navigationMenuTriggerStyle()} ${highlightSelectedTab(item)}`}>
+                  <NavigationMenuLink
+                    className={`${navigationMenuTriggerStyle()} ${highlightSelectedTab(
+                      item
+                    )}`}
+                  >
                     {item?.name}
                   </NavigationMenuLink>
                 </Link>
@@ -75,19 +81,21 @@ export default function HeaderBottom(props: any, req: any) {
             </div>
             <div className="flex-col gap-[10px] md:gap-[5px]">
               {[...props.categories].map((item, index) => (
-                <Link
-                  href={item?.slug}
-                  key={index}
-                  className="flex cursor-pointer justify-center items-center w-full py-1"
-                >
-                  {item?.name}
-                </Link>
+                <DrawerClose asChild>
+                  <Link
+                    href={item?.slug}
+                    key={index}
+                    className="flex cursor-pointer justify-center items-center w-full py-1"
+                  >
+                    {item?.name}
+                  </Link>
+                </DrawerClose>
               ))}
             </div>
           </DrawerContent>
         </Drawer>
       </div>
-    </section >
+    </section>
   );
 }
 
