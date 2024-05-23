@@ -4,7 +4,8 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "./_header/page";
 import Footer from "./_footer/page";
-
+import Script from "next/script";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -40,6 +41,20 @@ export default function RootLayout({
           <Footer></Footer>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-XZW236T7DK" />
+      <Script id="" type="application/ld+json"> 
+        {JSON.stringify({
+          "@context": "https://schema.org/",
+          "@type": "WebSite",
+          "name": "JustReadInside",
+          "url": "https://www.justreadinside.com",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.justreadinside.com/about-us{search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        })}
+      </Script>
     </html>
   );
 }
