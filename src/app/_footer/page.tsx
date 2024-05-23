@@ -44,7 +44,7 @@ const socialLink = [
         className="bg-[#36528c] p-2 rounded-full"
       />
     ),
-    href: "https://www.facebook.com/people/Inshorten/61558539543020/",
+    href: "#",
   },
   {
     icon: (
@@ -54,7 +54,7 @@ const socialLink = [
         className="bg-gradient-to-br from-[#F1D424] via-[#F42E7E] to-[#8A1BB5] p-2 rounded-full"
       />
     ),
-    href: "https://www.instagram.com/inshorten_/",
+    href: "#",
   },
   {
     icon: (
@@ -64,7 +64,7 @@ const socialLink = [
         className="bg-[#2c313c] p-2 rounded-full"
       />
     ),
-    href: "https://twitter.com/inshorten",
+    href: "#",
   },
   {
     icon: (
@@ -74,7 +74,7 @@ const socialLink = [
         className="bg-[#E51212] p-2 rounded-full"
       />
     ),
-    href: "https://www.youtube.com/",
+    href: "#",
   },
 ];
 export default function Footer() {
@@ -149,9 +149,9 @@ export default function Footer() {
         <div className="flex flex-col items-center w-full lg:w-[33%] px-4 ">
           <div className="font-medium mt-5">Subscribe to Our Newsletter</div>
           <div className="flex w-full bg-[#403f45f9] rounded-3xl mt-4">
-            <input type="text" placeholder="contact@inshorten.com" className="w-full py-3 bg-transparent text-white pl-5 text-sm sm:text-[16px]" />
+            <input type="text" placeholder="contact@justreadinside.com" className="w-full py-3 bg-transparent text-white pl-5 text-sm sm:text-[16px]" />
             <Link
-              href="mailto:contact@inshorten.com"
+              href="mailto:contact@justreadinside.com"
               className="flex items-center text-sm sm:text-[16px] bg-[#1867dc] text-nowrap text-white font-medium px-3 sm:px-12 lg:px-5 rounded-3xl m-1"
             >
               Contact Us

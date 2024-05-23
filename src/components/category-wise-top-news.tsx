@@ -1,15 +1,10 @@
 "use client";
-
-import Image from "next/image";
 import {
   Card,
-  CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ImageWithFallback from "./image-with-fallback";
 

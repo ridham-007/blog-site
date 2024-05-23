@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { cookies } from "next/headers"
 import Header from "./_header/page";
 import Footer from "./_footer/page";
 
@@ -10,8 +9,8 @@ import Footer from "./_footer/page";
 const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "InShorten: Latest News, Blog, Travel",
-  description: "Discover the globe with our one-stop shop that provides the most recent news updates, a wide range of blog posts, and motivational travel guides.",
+  title: "JustReadInside | Explore the world",
+  description: "Discover the globe with our one-stop shop that provides thea wide range of blog posts, and motivational travel guides."
 };
 
 export default function RootLayout({

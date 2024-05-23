@@ -10,17 +10,17 @@ const ShowArticle = ({ article }: any) => {
     <div className='article-container'>
       <div className='flex w-[100%] justify-end gap-[10px] p-[10px] pb-0'>
         <Button variant="outline" size="icon">
-          <Link href="https://www.facebook.com/people/Inshorten/61558539543020/" target="_blank" aria-label="facebook">
+          <Link href="/" target="_blank" aria-label="facebook">
             <Facebook className="h-[1.2rem] w-[1.2rem]" />
           </Link>
         </Button>
         <Button variant="outline" size="icon">
-          <Link href="https://twitter.com/inshorten" target="_blank" aria-label="twitter">
+          <Link href="/" target="_blank" aria-label="twitter">
             <FaXTwitter className="h-[1.2rem] w-[1.2rem]" />
           </Link>
         </Button>
         <Button variant="outline" size="icon">
-          <Link href="https://www.youtube.com/" target="_blank" aria-label="youtube">
+          <Link href="/" target="_blank" aria-label="youtube">
             <Youtube className="h-[1.2rem] w-[1.2rem]" />
           </Link>
         </Button>

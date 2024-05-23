@@ -1,20 +1,19 @@
-import { useRouter } from "next/navigation";
 import { GetPopularNews, GetRecentNews, LoadContentUsingSlug } from "./actions";
 import { Suspense } from "react";
 import { CategoryWiseTopNewsSkeleton } from "@/components/category-wise-top-news";
 import { ArticleSkeleton } from "@/components/show-article";
-import DynamicNewsWall, { DynamicNewsWallSkeleton } from "@/components/dynamic-news-wall";
+import { DynamicNewsWallSkeleton } from "@/components/dynamic-news-wall";
 import { Metadata, ResolvingMetadata } from "next";
 
 function getMetaDataOfAbout(): Metadata {
   return {
-    title: "About Us - inshorten.com",
-    description: "Welcome to InShorten, your go-to source for the latest news and articles on a wide range of topics",
+    title: "About Us | justreadinside.com",
+    description: "Welcome to justreadinside, your go-to source for the latest news and articles on a wide range of topics",
     openGraph: {
       url: process.env.NEXT_PUBLIC_SITE_URL,
       type: "website",
-      title: "About Us - inshorten.com",
-      description: "Welcome to InShorten, your go-to source for the latest news and articles on a wide range of topics",
+      title: "About Us | justreadinside.com",
+      description: "Welcome to justreadinside, your go-to source for the latest news and articles on a wide range of topics",
     },
     alternates: {
       canonical: process.env.NEXT_PUBLIC_SITE_URL
@@ -24,13 +23,13 @@ function getMetaDataOfAbout(): Metadata {
 
 function getMetaDataOfPrivacyPolicy(): Metadata {
   return {
-    title: "Privacy Policy - inshorten.com",
-    description: "Read InShorten's Privacy Policy to understand how we protect and manage your data and privacy while using our services.",
+    title: "Privacy Policy | justreadinside.com",
+    description: "Read justreadinside's Privacy Policy to understand how we protect and manage your data and privacy while using our services.",
     openGraph: {
       url: process.env.NEXT_PUBLIC_SITE_URL,
       type: "website",
-      title: "Privacy Policy - inshorten.com",
-      description: "Read InShorten's Privacy Policy to understand how we protect and manage your data and privacy while using our services."
+      title: "Privacy Policy | justreadinside.com",
+      description: "Read justreadinside's Privacy Policy to understand how we protect and manage your data and privacy while using our services."
     },
     alternates: {
       canonical: process.env.NEXT_PUBLIC_SITE_URL
@@ -40,13 +39,13 @@ function getMetaDataOfPrivacyPolicy(): Metadata {
 
 function getMetaDataOfTerms(): Metadata {
   return {
-    title: "Terms and Conditions - inshorten.com",
-    description: "Review the Terms and Conditions for using InShorten's services. Understand your rights and responsibilities as a user of our platform",
+    title: "Terms and Conditions | justreadinside.com",
+    description: "Review the Terms and Conditions for using justreadinside's services. Understand your rights and responsibilities as a user of our platform",
     openGraph: {
       url: process.env.NEXT_PUBLIC_SITE_URL,
       type: "website",
-      title: "Terms and Conditions - inshorten.com",
-      description: "Review the Terms and Conditions for using InShorten's services. Understand your rights and responsibilities as a user of our platform"
+      title: "Terms and Conditions | justreadinside.com",
+      description: "Review the Terms and Conditions for using justreadinside's services. Understand your rights and responsibilities as a user of our platform"
     },
     alternates: {
       canonical: process.env.NEXT_PUBLIC_SITE_URL
@@ -56,13 +55,13 @@ function getMetaDataOfTerms(): Metadata {
 
 function getMetaDataOfDisclaimer(): Metadata {
   return {
-    title: "Disclaimer - inshorten.com",
-    description: "Disclaimer InShorten",
+    title: "Disclaimer | justreadinside.com",
+    description: "Disclaimer justreadinside",
     openGraph: {
       url: process.env.NEXT_PUBLIC_SITE_URL,
       type: "website",
-      title: "Disclaimer - inshorten.com",
-      description: "Disclaimer InShorten"
+      title: "Disclaimer | justreadinside.com",
+      description: "Disclaimer justreadinside"
     },
     alternates: {
       canonical: process.env.NEXT_PUBLIC_SITE_URL
@@ -72,13 +71,13 @@ function getMetaDataOfDisclaimer(): Metadata {
 
 function getMetaDataOfContact(): Metadata {
   return {
-    title: "Contact - inshorten.com",
-    description: "Get in touch with InShorten for inquiries about our services. Contact us today for more information and support.",
+    title: "Contact | justreadinside.com",
+    description: "Get in touch with justreadinside for inquiries about our services. Contact us today for more information and support.",
     openGraph: {
       url: process.env.NEXT_PUBLIC_SITE_URL,
       type: "website",
-      title: "Contact - inshorten.com",
-      description: "Get in touch with InShorten for inquiries about our services. Contact us today for more information and support."
+      title: "Contact | justreadinside.com",
+      description: "Get in touch with justreadinside for inquiries about our services. Contact us today for more information and support."
     },
     alternates: {
       canonical: process.env.NEXT_PUBLIC_SITE_URL
@@ -117,8 +116,8 @@ export async function generateMetadata(
         const responseData = await res.json();
         const { metaData } = responseData?.data;
         return {
-          title: metaData?.name || metaData?.title || "InShorten",
-          description: metaData?.seo_description || metaData?.description || "InShorten",
+          title: metaData?.name || metaData?.title || "JustReadInside",
+          description: metaData?.seo_description || metaData?.description || "JustReadInside",
           keywords: metaData?.keywords && [...metaData?.keywords],
           openGraph: {
             ...((metaData?.openGraph?.title || metaData?.openGraph?.ogTitle) && { title: metaData?.openGraph?.title || metaData?.openGraph?.ogTitle }),
@@ -143,8 +142,8 @@ export async function generateMetadata(
 
       } catch (e) {
         return {
-          title: "InShorten: Latest News, Blog, Travel",
-          description: "Discover the globe with our one-stop shop that provides the most recent news updates, a wide range of blog posts, and motivational travel guides."
+          title: "JustReadInside | Explore the world",
+          description: "Discover the globe with our one-stop shop that provides thea wide range of blog posts, and motivational travel guides."
         }
       }
     }

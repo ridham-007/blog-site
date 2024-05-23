@@ -65,22 +65,22 @@ export default function HeaderTop({ data }: any) {
           <div className="hidden md:flex border-l-[1px] border-gray-400 h-[20px]"></div>
           <div className="flex gap-[10px]">
             <Button variant="outline" size="icon">
-              <Link href="https://www.facebook.com/people/Inshorten/61558539543020/" target="_blank" aria-label="facebook">
+              <Link href="#" target="_blank" aria-label="facebook">
                 <Facebook className="h-[1.2rem] w-[1.2rem]" />
               </Link>
             </Button>
             <Button variant="outline" size="icon">
-              <Link href="https://www.instagram.com/inshorten_/" target="_blank" aria-label="instagram">
+              <Link href="#" target="_blank" aria-label="instagram">
                 <Instagram className="h-[1.2rem] w-[1.2rem]" />
               </Link>
             </Button>
             <Button variant="outline" size="icon">
-              <Link href="https://twitter.com/inshorten" target="_blank" aria-label="twitter">
+              <Link href="#" target="_blank" aria-label="twitter">
                 <FaXTwitter className="h-[1.2rem] w-[1.2rem]" />
               </Link>
             </Button>
             <Button variant="outline" size="icon">
-              <Link href="https://www.youtube.com/" target="_blank" aria-label="youtube">
+              <Link href="#" target="_blank" aria-label="youtube">
                 <Youtube className="h-[1.2rem] w-[1.2rem]" />
               </Link>
             </Button>
