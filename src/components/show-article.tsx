@@ -34,7 +34,7 @@ export default ShowArticle
 
 export function ArticleSkeleton() {
   return (
-    <div className='article-container'>
+    <div className='article-container !px-5'>
       <div className="flex w-full flex-col gap-2">
         <div className="w-[160px] h-[35px] bg-[#d1d5db] animate-pulse rounded-sm"></div>
         {Array(12)
