@@ -41,7 +41,7 @@ export default function RootLayout({
           <Footer></Footer>
         </ThemeProvider>
       </body>
-      <GoogleAnalytics gaId="G-XZW236T7DK" />
+      <GoogleAnalytics gaId="G-E6JQ21SY2Q" />
       <Script id="" type="application/ld+json"> 
         {JSON.stringify({
           "@context": "https://schema.org/",
