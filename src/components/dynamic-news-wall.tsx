@@ -51,7 +51,7 @@ export default function DynamicNewsWall(props: NewsWallProps) {
               </div>
             </div>
             <div className="flex text-sm font-normal dark:text-[#9B9B9B] news gap-2 whitespace-nowrap py-1 text-[#444746]">
-              {formatDate(cur?.createdAt)}
+              {formatDate(cur?.updatedAt)}
               <Link href={'#'} className="font-medium">Read</Link>
             </div>
           </div>
