@@ -62,7 +62,7 @@ export default function HeaderTop({ data }: any) {
 
         <div className="flex items-center gap-[25px]">
           <div className="text-[14px]">{formattedDate}</div>
-          <div className="hidden md:flex border-l-[1px] border-gray-400 h-[20px]"></div>
+          {/* <div className="hidden md:flex border-l-[1px] border-gray-400 h-[20px]"></div>
           <div className="flex gap-[10px]">
             <Button variant="outline" size="icon">
               <Link href="#" target="_blank" aria-label="facebook">
@@ -84,7 +84,7 @@ export default function HeaderTop({ data }: any) {
                 <Youtube className="h-[1.2rem] w-[1.2rem]" />
               </Link>
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
@@ -111,7 +111,7 @@ export function HeaderTopSkeleton() {
           </div>
         </div>
 
-        <div className="flex items-center gap-[25px]">
+        {/* <div className="flex items-center gap-[25px]">
           <div className="hidden md:flex border-l-[1px] border-gray-400 h-[20px]"></div>
           <div className="flex gap-[10px]">
             <Button variant="outline">
@@ -127,7 +127,7 @@ export function HeaderTopSkeleton() {
               <Instagram className="h-5 w-5" />
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

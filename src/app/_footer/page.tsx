@@ -157,7 +157,7 @@ export default function Footer() {
               Contact Us
             </Link>
           </div>
-          <div className="flex w-full gap-4 mt-5">
+          {/* <div className="flex w-full gap-4 mt-5">
             {socialLink.map((socialLink: any, index) => {
               return (
                 <div
@@ -168,7 +168,7 @@ export default function Footer() {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex justify-center border-t text-[#b7b7b7] border-gray-300 mt-8 pt-5 items-center">
