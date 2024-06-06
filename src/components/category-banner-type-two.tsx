@@ -26,7 +26,7 @@ export default function CategoryBannerTypeTwo(
       <div className="flex justify-between items-center border-b border-[#e3e3e3] pb-2">
         <Link
           href={`/${props.slug ?? ""}`}
-          className="flex items-center text-[20px] text-[#26a79a] font-semibold cursor-pointer"
+          className="flex items-center text-[20px] text-[#050] font-semibold cursor-pointer"
         >
           {props.title.trim()} <GoChevronRight size={24} className="ml-3" />
         </Link>

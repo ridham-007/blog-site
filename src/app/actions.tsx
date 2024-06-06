@@ -47,7 +47,7 @@ export async function GetCategoryShortPreview() {
     }
 
     return arrayOfResponse.map((cur, index) => {
-      if (index % 2 == 0) {
+      if (index % 2 == 1) {
         return <CategoryBannerTypeOne key={`Banner-${index}`} {...cur}></CategoryBannerTypeOne>;
       } else {
         return <CategoryBannerTypeTwo key={`Banner-${index}`} {...cur}></CategoryBannerTypeTwo>;

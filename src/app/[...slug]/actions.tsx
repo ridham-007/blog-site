@@ -41,7 +41,13 @@ export async function LoadContentUsingSlug(slug: any) {
             const { article } = responseData?.data;
             return <ShowArticle article={article} />;
           } else {
-            const { articles } = responseData?.data?.category;
+            let { articles = [] } = responseData?.data?.category;
+            articles = [...articles].sort((a: any, b: any) => {
+              const diff =
+              new Date(b?.updatedAt).getTime() -
+              new Date(a?.updatedAt).getTime();
+              return diff;
+            });
             return <CategoryWiseTopNews articles={articles} />;
           }
         } catch (e) {
@@ -95,4 +101,3 @@ export async function GetPopularNews() {
     return <DynamicNewsWallSkeleton label="Popular" />;
   }
 }
-

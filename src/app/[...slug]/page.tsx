@@ -174,7 +174,7 @@ export default function Slug({
 
   return (
     <main className="flex w-full flex-wrap gap-2 px-3">
-      <section className="flex flex-col flex-1 basis-[100%] sm:basis-[68%]">
+      <section className="flex flex-col flex-1 basis-[100%] sm:basis-[68%] overflow-x-hidden">
         {Array.isArray(params.slug) && params.slug.length > 0 && (
           <Suspense fallback={renderShimmerContent()}>
             <LoadContentUsingSlug slug={params.slug[0]} />

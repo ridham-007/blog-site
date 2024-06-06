@@ -98,11 +98,16 @@
 .article-container div:has(table) {
     display: flex;
     width: 100%;
+    width:calc(100% - 1px) !important;
+    max-width: calc(100% - 1px) !important;
     overflow-x: auto;
 }
 
 .article-container table {
     margin: 12px 5px;
+    width:calc(100% - 1px) !important;
+    max-width: calc(100% - 1px) !important;
+    overflow-x: auto;
 }
 
 .article-container td {
@@ -208,3 +213,6 @@
     text-transform: uppercase;
 }
 
+.article-container video {
+    display: none;
+} 
