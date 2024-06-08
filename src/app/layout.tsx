@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Open_Sans, Lato, Arimo, Nunito,Poppins } from "next/font/google";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "./_header/page";
@@ -7,7 +7,25 @@ import Footer from "./_footer/page";
 import Script from "next/script";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
-const inter = Montserrat({ subsets: ["latin"] });
+// const inter = Open_Sans({
+//   subsets: ['latin'],
+//   // display: 'swap',
+// })
+
+// const inter = Arimo({
+//   subsets: ['latin'],
+//   // display: 'swap',
+// })
+
+// const inter = Nunito({
+//   subsets: ['latin'],
+//   // display: 'swap',
+// })
+const inter = Lato({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "JustReadInside | Explore the world",

@@ -8,11 +8,11 @@
     font-family: inherit;
 }
 
-.article-container p {
+.article-container p, .article-container span {
     font-size: 15px;
     font-weight: 500;
     width: 100%;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     text-align: justify;
 }
 
@@ -20,7 +20,6 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    text-transform: capitalize;
 }
 
 .article-container p>img, .article-container div>img, .article-container img {
@@ -44,21 +43,21 @@
 }
 
 .article-container h2 {
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 500;
     font-family: system-ui;
     padding: 10px 0px;
 }
 
 .article-container h3 {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 500;
     padding: 10px 0px;
     font-family: system-ui;
 }
 
 .article-container h4 {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
     padding: 10px 0px;
     font-family: system-ui;
