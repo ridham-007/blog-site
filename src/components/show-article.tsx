@@ -20,12 +20,10 @@ const ShowArticle = ({ article }: any) => {
   useEffect(()=>{
     document.querySelectorAll('div').forEach(function(element) {
       if ((element?.textContent?? "").trim().slice(-1) ==='?') {
-        console.log(element?.textContent);
         element.style.fontWeight = '700'; // Example action
       }
     });
     document.querySelectorAll('p').forEach(function(element) {
-      console.log(element?.textContent, (element?.textContent?? "").slice(-1));
       if ((element?.textContent?? "").trim().slice(-1) ==='?') {
         element.style.fontWeight = '700'; // Example action
       }
