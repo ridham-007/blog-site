@@ -42,6 +42,7 @@ export async function LoadContentUsingSlug(slug: any) {
             return <ShowArticle article={article} />;
           } else {
             let { articles = [] } = responseData?.data?.category;
+            articles = [...articles].filter(article=>article?.status);
             articles = [...articles].sort((a: any, b: any) => {
               const diff =
               new Date(b?.updatedAt).getTime() -
