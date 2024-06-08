@@ -21,7 +21,6 @@ export async function GetCategoryShortPreview() {
     });
     const data = await res.json();
     const { categories } = data;
-
     if (!Array.isArray(categories)) {
       return <LoadPreviewForCategoriesShimmer />;
     }
@@ -33,7 +32,7 @@ export async function GetCategoryShortPreview() {
           next: { revalidate: 60 },
         });
         const { articles } = await categoryData.json();
-        if (Array.isArray(articles) && articles.length >= 5) {
+        if (Array.isArray(articles) && articles.length >= 4) {
           arrayOfResponse.push({
             title: categories[i].name,
             slug: categories[i].slug,
