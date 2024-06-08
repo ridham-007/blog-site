@@ -7,10 +7,10 @@ import Footer from "./_footer/page";
 import Script from "next/script";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
-// const inter = Open_Sans({
-//   subsets: ['latin'],
-//   // display: 'swap',
-// })
+const inter = Open_Sans({
+  subsets: ['latin'],
+  // display: 'swap',
+})
 
 // const inter = Arimo({
 //   subsets: ['latin'],
@@ -21,11 +21,10 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 //   subsets: ['latin'],
 //   // display: 'swap',
 // })
-const inter = Lato({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-})
+// const inter = Lato({
+//   weight: '400',
+//   subsets: ['latin'],
+// })
 
 export const metadata: Metadata = {
   title: "JustReadInside | Explore the world",
