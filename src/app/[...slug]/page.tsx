@@ -110,7 +110,8 @@ export async function generateMetadata(
         const res = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/common/meta-data/${path}`,
           {
-            next: { revalidate: 10 },
+            cache: 'no-cache',
+            next: { revalidate: 120 },
           }
         );
         const responseData = await res.json();
@@ -118,7 +119,7 @@ export async function generateMetadata(
         return {
           title: metaData?.name || metaData?.title || "JustReadInside",
           description: metaData?.seo_description || metaData?.description || "JustReadInside",
-          keywords: metaData?.keywords && [...metaData?.keywords],
+          keywords: metaData?.keywords && [metaData?.keywords],
           openGraph: {
             ...((metaData?.openGraph?.title || metaData?.openGraph?.ogTitle) && { title: metaData?.openGraph?.title || metaData?.openGraph?.ogTitle }),
             ...((metaData?.openGraph?.description || metaData?.openGraph?.ogDescription) && { description: metaData?.openGraph?.description || metaData?.openGraph?.ogDescription }),
