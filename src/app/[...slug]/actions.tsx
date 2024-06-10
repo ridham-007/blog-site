@@ -32,8 +32,8 @@ export async function LoadContentUsingSlug(slug: any) {
           const res = await fetch(
             `${process.env.NEXT_PUBLIC_API_URL}/common/slug-data/${categorySlug}`,
             {
-              cache: 'no-cache',
-              next: { revalidate: 180 },
+              cache: 'no-store',
+              next: { revalidate: 240 },
             }
           );
           const responseData = await res.json();
