@@ -152,7 +152,7 @@ export default function Footer() {
             <input type="text" placeholder="contact@justreadinside.com" className="w-full py-3 bg-transparent text-white pl-5 text-sm sm:text-[16px]" />
             <Link
               href="mailto:contact@justreadinside.com"
-              className="flex items-center text-sm sm:text-[16px] bg-[#1867dc] text-nowrap text-white font-medium px-3 sm:px-12 lg:px-5 rounded-3xl m-1"
+              className="flex items-center text-sm sm:text-[16px] bg-[#1867dc] text-nowrap text-white font-medium px-3 sm:px-12 lg:px-5 rounded-3xl m-1 whitespace-nowrap"
             >
               Contact Us
             </Link>
