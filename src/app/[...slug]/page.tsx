@@ -110,8 +110,7 @@ export async function generateMetadata(
         const res = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/common/meta-data/${path}`,
           {
-            cache: 'no-cache',
-            next: { revalidate: 120 },
+            cache: 'no-store',
           }
         );
         const responseData = await res.json();

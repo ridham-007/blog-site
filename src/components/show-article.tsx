@@ -38,7 +38,7 @@ const ShowArticle = ({ article }: any) => {
             {formatDate(article?.updatedAt)}
           </div>
           <div className="flex gap-2">
-            <Button variant="outline" size="icon">
+            {/* <Button variant="outline" size="icon">
               <Link href="/" target="_blank" aria-label="facebook">
                 <Facebook className="h-[1.2rem] w-[1.2rem]" />
               </Link>
@@ -52,7 +52,7 @@ const ShowArticle = ({ article }: any) => {
               <Link href="/" target="_blank" aria-label="youtube">
                 <Youtube className="h-[1.2rem] w-[1.2rem]" />
               </Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
