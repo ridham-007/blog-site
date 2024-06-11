@@ -28,6 +28,11 @@ const ShowArticle = ({ article }: any) => {
         element.style.fontWeight = '700'; // Example action
       }
     });
+    document.querySelectorAll('b').forEach(function(element) {
+      if ((element?.textContent?? "").trim().slice(-1) ==='?') {
+        element.style.fontWeight = '700'; // Example action
+      }
+    });
   },[])
   return (
     <div className="article-container">
