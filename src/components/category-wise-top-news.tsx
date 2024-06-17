@@ -7,6 +7,7 @@ import {
 } from "./ui/card";
 import { useRouter } from "next/navigation";
 import ImageWithFallback from "./image-with-fallback";
+import Link from "next/link";
 
 export default function CategoryWiseTopNews({ articles }: any) {
   const router = useRouter();
@@ -17,10 +18,11 @@ export default function CategoryWiseTopNews({ articles }: any) {
     <div className="flex w-full flex-wrap justify-start gap-2 h-fit">
       {articles.map((item: any, index: any) => {
         return (
-          <Card
+          <Link
+            href={item?.slug}
             key={`CategoryWiseTopNews-${index}`}
             className="flex flex-col flex-1 lg:basis-[32%] sm:basis-[49%] basis-[100%] lg:max-w-[32%] sm:max-w-[49%] cursor-pointer p-1 rounded-sm"
-            onClick={() => handleArticleOpen(item)}
+            // onClick={() => handleArticleOpen(item)}
           >
             <CardHeader className="flex flex-col basis-[90%] flex-1 px-2 py-3">
               <CardTitle className="flex basis-[70%] flex-1 flex-col">
@@ -42,7 +44,7 @@ export default function CategoryWiseTopNews({ articles }: any) {
                 {item?.title}
               </CardDescription>
             </div>
-          </Card>
+          </Link>
         );
       })}
     </div>

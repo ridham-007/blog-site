@@ -19,7 +19,7 @@ export interface CategoryBannerTypeOneProps {
 export default function CategoryBannerTypeOne(props: CategoryBannerTypeOneProps) {
   const router = useRouter();
   return (
-    <Card className="w-full gap-[15px] flex flex-col p-[20px]">
+    <div className="w-full gap-[15px] flex flex-col p-[20px]">
       <div className="flex justify-between items-center border-b border-[#e3e3e3] pb-2">
         <Link href={`/${props.slug??''}`} className="flex items-center text-[20px] text-[#1867dc] font-semibold cursor-pointer">
           {props.title.trim()} <GoChevronRight size={24} className="ml-3" />
@@ -48,7 +48,7 @@ export default function CategoryBannerTypeOne(props: CategoryBannerTypeOneProps)
         </div>
         <div className="flex flex-col sm:flex-row cursor-pointer basis-full flex-0 justify-around gap-[10px]">
           {props.news.slice(3,5).map((item: any, index: any) => (
-            <Card
+            <div
               key={`CategoryWiseTopNews-${index}`}
               className="flex flex-col flex-1 cursor-pointer rounded-sm"
               onClick={()=>router.push(`/${item.slug}`)}
@@ -68,17 +68,17 @@ export default function CategoryBannerTypeOne(props: CategoryBannerTypeOneProps)
                   {item?.title}
                 </CardDescription>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
 
 export function CategoryBannerTypeOneSkeleton() {
   return (
-    <Card className="w-full gap-[16px] flex flex-col p-[20px]">
+    <div className="w-full gap-[16px] flex flex-col p-[20px]">
       <div className="flex justify-between items-center border-b border-[#e3e3e3] pb-2">
         <div className="flex items-center">
           <div className="w-[70px] h-[30px] bg-[#d1d5db] animate-pulse rounded-sm"></div>
@@ -135,6 +135,6 @@ export function CategoryBannerTypeOneSkeleton() {
         </div>
       </div>
 
-    </Card>
+    </div>
   )
 }

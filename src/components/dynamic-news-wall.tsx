@@ -29,11 +29,11 @@ export default function DynamicNewsWall(props: NewsWallProps) {
   }
 
   return (
-    <Card className="flex flex-col h-auto p-5 rounded-lg border-0 border-t-[4px] border-[var(--primary)] dark:border-t-[#C9C9C9] news">
+    <Card className="flex flex-col h-auto p-5 rounded-lg border-0 border-t-[4px] border-[var(--primary)] dark:border-t-[#C9C9C9] news shadow-sm">
       <div className="flex items-center text-[20px] font-semibold md:text-[20px] text-foreground pb-2 cursor-pointer dark:text-[#E5E5E5]">{props.title}<GoChevronRight size={24} className="ml-3" /></div>
       {props.news?.map((cur: any, index) => {
         return (
-          <div className="flex flex-col" key={`${props.title}-${index}`} onClick={() => { router.push(cur.slug) }}>
+          <Link className="flex flex-col" key={`${props.title}-${index}`} href={cur.slug}>
             <hr className="py-2 text-[#e3e3e3]"></hr>
             <div
               key={`${cur.title}-${index}`}
@@ -54,7 +54,7 @@ export default function DynamicNewsWall(props: NewsWallProps) {
               {formatDate(cur?.updatedAt)}
               <Link href={'#'} className="font-medium">Read</Link>
             </div>
-          </div>
+          </Link>
         );
       })}
     </Card>

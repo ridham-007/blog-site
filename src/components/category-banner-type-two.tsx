@@ -22,7 +22,7 @@ export default function CategoryBannerTypeTwo(
 ) {
   const router = useRouter();
   return (
-    <Card className="flex flex-col w-full p-[20px] gap-[15px]">
+    <div className="flex flex-col w-full p-[20px] gap-[15px]">
       <div className="flex justify-between items-center border-b border-[#e3e3e3] pb-2">
         <Link
           href={`/${props.slug ?? ""}`}
@@ -37,7 +37,7 @@ export default function CategoryBannerTypeTwo(
       <div className="flex flex-row flex-wrap w-[100%] md:flex-nowrap gap-[20px]">
         <div className="flex basis-full md:basis-[45%] flex-shrink-0 flex-col">
           {props.news.slice(0, 1).map((item: any, index: any) => (
-            <Card
+            <div
               key={`CategoryWiseTopNews-${index}`}
               className="flex flex-col flex-1 cursor-pointer rounded-sm"
               onClick={()=>router.push(`/${item.slug}`)}
@@ -57,7 +57,7 @@ export default function CategoryBannerTypeTwo(
                   {item?.title}
                 </CardDescription>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
         <div className="flex flex-col basis-full flex-0 gap-[10px]">
@@ -81,7 +81,7 @@ export default function CategoryBannerTypeTwo(
           ))}
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
 
