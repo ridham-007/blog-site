@@ -94,3 +94,9 @@
 
 @import "./article.css";
 @import "./navItem.css";
+.two-column-container {
+  column-count: 2;
+  column-gap: 20px;
+  height: 200px;
+  overflow: hidden;
+}
