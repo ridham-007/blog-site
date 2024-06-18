@@ -31,13 +31,20 @@ export async function GetCategoryShortPreview() {
         const categoryData = await fetch(url, {
           next: { revalidate: 60 },
         });
-        const { articles } = await categoryData.json();
+        let { articles } = await categoryData.json();
+        articles = [...articles].sort((a: any, b: any) => {
+          const diff =
+          new Date(b?.updatedAt).getTime() -
+          new Date(a?.updatedAt).getTime();
+          return diff;
+        });
         if (Array.isArray(articles) && articles.length >= 4) {
           arrayOfResponse.push({
             title: categories[i].name,
             slug: categories[i].slug,
             news: articles,
           });
+          
         }
       } catch (error) {
         console.log(error);
