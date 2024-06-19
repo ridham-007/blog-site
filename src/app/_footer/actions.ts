@@ -1,7 +1,7 @@
 
 export async function GetAllCategories() {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/all`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/common/category/${process.env.NEXT_PUBLIC_SITE_ID}`, {
             next: { revalidate: 200 },
         });
         const data = await response.json();

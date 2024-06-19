@@ -16,7 +16,7 @@ function LoadPreviewForCategoriesShimmer(){
 
 export async function GetCategoryShortPreview() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/all`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/common/category/${process.env.NEXT_PUBLIC_SITE_ID}`, {
       next: { revalidate: 60 },
     });
     const data = await res.json();

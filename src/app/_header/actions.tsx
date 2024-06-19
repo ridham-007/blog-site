@@ -4,7 +4,7 @@ import HeaderBottom, { HeaderBottomSkeleton } from "@/components/header-bottom";
 import HeaderTop, { HeaderTopSkeleton } from "@/components/header-top";
 
 export async function GetHeaderCategories() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/all`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/common/category/${process.env.NEXT_PUBLIC_SITE_ID}`, {
     next: { revalidate: 60 },
   });
   const data = await res.json();
