@@ -29,7 +29,7 @@ export default function DynamicNewsWall(props: NewsWallProps) {
   }
 
   return (
-    <Card className="flex flex-col h-auto p-5 rounded-lg border-0 border-t-[4px] border-[var(--primary)] dark:border-t-[#C9C9C9] news shadow-sm">
+    <div className="flex flex-col h-auto p-5 md:border-l-[1px] news">
       <div className="flex items-center text-[20px] font-semibold md:text-[20px] text-foreground pb-2 cursor-pointer dark:text-[#E5E5E5]">{props.title}<GoChevronRight size={24} className="ml-3" /></div>
       {props.news?.map((cur: any, index) => {
         return (
@@ -57,13 +57,13 @@ export default function DynamicNewsWall(props: NewsWallProps) {
           </Link>
         );
       })}
-    </Card>
+    </div>
   );
 }
 
 export function DynamicNewsWallSkeleton(props: { label: string }) {
   return (
-    <Card className="flex flex-col h-auto p-5 rounded-lg border-0 border-t-[5px] border-[var(--primary)]">
+    <div className="flex flex-col h-auto p-5 border-l-[1px]">
       <div className="h-[30px] w-full md:h-[33px] items-center">
         <div className="flex h-6 flex-1 bg-[#d1d5db] rounded-full animate-pulse"></div>
       </div>
@@ -91,6 +91,6 @@ export function DynamicNewsWallSkeleton(props: { label: string }) {
             </div>
           );
         })}
-    </Card>
+    </div>
   );
 }
