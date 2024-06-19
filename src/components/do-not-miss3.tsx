@@ -7,22 +7,23 @@ const description =
   "    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, quia quo at nisi omnis eveniet non sapiente nesciunt fugit. Autem natus nihir...";
 export default function DoNotMiss3(props: Article) {
   return (
-    <div className="flex flex-col w-full p-[20px] bg-white rounded-xl">
+    <div className="flex px-3">
       <div
-        className="flex h-[400px] sm:h-[500px] w-full bg-cover bg-center bg-no-repeat "
+        className="flex flex-col w-full h-[400px] sm:h-[500px] rounded-xl bg-cover bg-center bg-no-repeat px-4 py-4"
         style={{ backgroundImage: `url(${featureImage.src})` }}
       >
-        <div className="flex flex-col w-full justify-end items-start mt-[300px] p-6">
-          <button
-            type="button"
-            className="bg-red-600 text-white px-4 py-1 text-[18px]  rounded-md"
-          >
-            Marketing
-          </button>
-          <div className="text-[18px] sm:text-[38px] font-bold text-white">
-            {title}
-          </div>
-          <div className=" text-[13px] sm:text-[16px] font-semibold text-white">{description}</div>
+        <div className="flex flex-1"></div>
+        <button
+          type="button"
+          className="bg-red-600 text-white px-4 py-1 text-[18px]  rounded-md w-fit"
+        >
+          Marketing
+        </button>
+        <div className="py-[5px] text-[18px] sm:text-[22px] font-bold text-white line-clamp-2 text-ellipsis overflow-hidden">
+          {title}
+        </div>
+        <div className="py-[5px] w-[100%] line-clamp-2 text-ellipsis overflow-hidden text-white">
+          {description}
         </div>
       </div>
     </div>
