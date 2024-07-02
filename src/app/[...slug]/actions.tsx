@@ -30,26 +30,27 @@ export async function LoadContentUsingSlug(slug: any) {
       default: {
         try {
           const res = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/common/slug-data/${categorySlug}`,
+            `${process.env.NEXT_PUBLIC_API_URL}/common/${process.env.NEXT_PUBLIC_SITE_ID}/${categorySlug}/${1}/${30}`,
             {
               cache: 'no-store',
             }
           );
           const responseData = await res.json();
-          const { type } = responseData?.data;
+          const { type } = responseData;
           if (type === "article") {
-            const { article } = responseData?.data;
-            return <ShowArticle article={article} />;
+            const { article } = responseData;
+            return <ShowArticle article={article[0]} />;
           } else {
-            let { articles = [] } = responseData?.data?.category;
-            articles = [...articles].filter(article=>article?.status);
-            articles = [...articles].sort((a: any, b: any) => {
+    
+            let article = responseData?.article || [];
+            article = [...article].filter(article=>article?.status);
+            article = [...article].sort((a: any, b: any) => {
               const diff =
               new Date(b?.updatedAt).getTime() -
               new Date(a?.updatedAt).getTime();
               return diff;
             });
-            return <CategoryWiseTopNews articles={articles} />;
+            return <CategoryWiseTopNews articles={article} />;
           }
         } catch (e) {
           return notFound();
@@ -65,15 +66,15 @@ export async function LoadContentUsingSlug(slug: any) {
 export async function GetRecentNews() {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/articles/recent`,
+      `${process.env.NEXT_PUBLIC_API_URL}/common/article/${process.env.NEXT_PUBLIC_SITE_ID}/recent`,
       {
         next: { revalidate: 60 },
       }
     );
     const responseData = await res.json();
-    const { data } = responseData;
-    if (Array.isArray(data) && data.length > 0) {
-      return <DynamicNewsWall title="Recent Article" news={data} />;
+    const { articles } = responseData;
+    if (Array.isArray(articles) && articles.length > 0) {
+      return <DynamicNewsWall title="Recent Article" news={articles} />;
     } else {
       return <DynamicNewsWallSkeleton label="Recent" />;
     }
@@ -86,15 +87,15 @@ export async function GetRecentNews() {
 export async function GetPopularNews() {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/articles/popular`,
+      `${process.env.NEXT_PUBLIC_API_URL}/common/article/${process.env.NEXT_PUBLIC_SITE_ID}/popular`,
       {
         next: { revalidate: 60 },
       }
     );
     const responseData = await res.json();
-    const { data } = responseData;
-    if (Array.isArray(data) && data.length > 0) {
-      return <DynamicNewsWall title="Popular Article" news={data} />;
+    const { articles } = responseData;
+    if (Array.isArray(articles) && articles.length > 0) {
+      return <DynamicNewsWall title="Popular Article" news={articles} />;
     } else {
       return <DynamicNewsWallSkeleton label="Popular" />;
     }

@@ -17,13 +17,13 @@ export async function GetHeaderCategories() {
 
 export async function GetTrendingHeadLineNews() {
   // await new Promise((resolve, reject) => setTimeout(resolve, 2000));
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/articles/headline`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/common/article/${process.env.NEXT_PUBLIC_SITE_ID}/trending`, {
     next: { revalidate: 60 },
   });
   const headLine = await res.json();
-  const { data } = headLine;
-  if (!Array.isArray(data)) {
+  const { trending=[] } = headLine;
+  if (!Array.isArray(trending)) {
     return <HeaderTopSkeleton />;
   }
-  return <HeaderTop data={data} />;
+  return <HeaderTop data={trending} />;
 }
