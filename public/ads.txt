@@ -419,3 +419,5 @@ outbrain.com,002d7f7ba0bd74452f2b155d0dfb5cd6c8,RESELLER
 opera.com,pub10952251675200,RESELLER,55a0c5fd61378de3
 google.com, pub-6151720204273327, RESELLER, f08c47fec0942fa0
 bidfuse.com, bf-5303, DIRECT
+google.com, pub-3182858089993196, RESELLER, f08c47fec0942fa0
+digitalmatter.ai, 273, DIRECT
