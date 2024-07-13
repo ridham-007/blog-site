@@ -10,12 +10,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
         const changeFrequency = 'daily' as changeFrequency
 
-        const categoryResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/common/category-site-map`, {
+        const categoryResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/common/category-site-map/${process.env.NEXT_PUBLIC_SITE_ID}`, {
             next: { revalidate: 200 },
         });
         const data = await categoryResponse.json();
 
-        const articleResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/common/article-site-map`, {
+        const articleResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/common/article-site-map/${process.env.NEXT_PUBLIC_SITE_ID}`, {
           next: { revalidate: 200 },
       });
         const data1 = await articleResponse.json();
