@@ -22,7 +22,7 @@ const terms = [
         value: [
             <>
                 We take your privacy seriously. Our{' '}
-                <a href="https://www.justreadinside.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#1968fe] font-medium cursor-pointer">Privacy Policy</a>{' '}
+                <a href="https://justreadinside.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#1968fe] font-medium cursor-pointer">Privacy Policy</a>{' '}
                 explains how we collect, use, and protect your personal information.
             </>
         ],

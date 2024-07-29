@@ -67,10 +67,10 @@ export default function RootLayout({
           "@context": "https://schema.org/",
           "@type": "WebSite",
           "name": "JustReadInside",
-          "url": "https://www.justreadinside.com",
+          "url": "https://justreadinside.com",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://www.justreadinside.com/about-us{search_term_string}",
+            "target": "https://justreadinside.com/about-us{search_term_string}",
             "query-input": "required name=search_term_string"
           }
         })}
