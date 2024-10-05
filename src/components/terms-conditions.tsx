@@ -53,7 +53,7 @@ const terms = [
 
 export default function TermsConditions() {
     return (
-        <Card className="flex flex-col h-full p-[20px] dark:bg-[#202028] dark:text-[#cecdcd]">
+        <Card className="flex flex-col h-full p-[20px] dark:bg-[#202028] dark:text-[#cecdcd] bg-own_bg_secondary text-own_text_primary">
             <h1 className="flex justify-center text-[24px] font-bold p-[20px]">
                 Terms & Conditions
             </h1>

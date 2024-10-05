@@ -37,7 +37,7 @@ export default function ContactForm() {
     }
 
     return (
-        <Card className="p-[20px] dark:bg-[#202028]">
+        <Card className="p-[20px] dark:bg-[#202028] bg-own_bg_secondary text-own_text_primary">
             <Form {...form}>
                 <form className="flex flex-col items-center space-y-8 w-[100%] p-[10px]" onSubmit={form.handleSubmit(handleSubmit)}>
                     <h1 className="text-[22px] font-medium">Contact Form</h1>
@@ -87,7 +87,7 @@ export default function ContactForm() {
                             )}
                         />
                     </div>
-                    <Button type="submit" className="w-max">Submit</Button>
+                    <Button type="submit" className="w-max bg-own_white_color_primary text-own_black_color_primary hover:bg-own_white_color_primary">Submit</Button>
                 </form>
             </Form>
         </Card>

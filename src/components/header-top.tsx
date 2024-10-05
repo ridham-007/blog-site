@@ -93,7 +93,7 @@ export default function HeaderTop({ data }: any) {
 
 export function HeaderTopSkeleton() {
   return (
-    <section className="flex flex-col px-[20px] w-[100%]">
+    <section className="flex flex-col px-[20px] w-[100%] bg-own_bg_secondary">
       <div className="hidden sm:flex flex-wrap justify-between items-center h-auto gap-[5px]">
         <div className="flex p-[10px] text-[13px] bg-red-500 text-white">
           Trending

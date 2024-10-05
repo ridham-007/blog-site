@@ -15,7 +15,7 @@ export default function AboutUs() {
   //   "We deliver an unprecedented number of multimedia stories, exclusive videos and real-time in-depth data and analysis to keep you smart, sharp and get ahead. We deliver them in platforms and formats that are user friendly and value the time you spend with us.",
   // ];
   return (
-    <Card className="flex flex-col p-[20px] dark:bg-[#202028] dark:text-[#cecdcd]">
+    <Card className="flex flex-col p-[20px] dark:bg-[#202028] dark:text-[#cecdcd] bg-own_bg_secondary text-own_text_primary">
       <h1 className="flex justify-center text-[26px] font-bold p-[15px]">About Us</h1>
       <div className="block w-[100%] h-[200px] md:h-[450px] relative">
         <Image

@@ -94,18 +94,17 @@ export default function Footer() {
 
   return (
     // <footer className="flex flex-row flex-wrap md:flex-nowrap lg:h-[300px] gap-[20px] p-[20px] bg-foreground text-background m-3 rounded-md">
-    <footer className="flex flex-col h-auto w-full bg-foreground py-5 px-5 md:px-10 mt-5 dark:bg-[#202028]">
+    <footer className="flex flex-col h-auto w-full bg-foreground py-5 px-5 md:px-10 mt-5 dark:bg-[#202028] ">
       <div className="flex">
-        {theme === 'light' ?
-          (
-            <Link href="/">
-              <Logo place="footer"></Logo>
-            </Link>
-          ) : (
-            <Link href="/">
-              <Logo place="header"></Logo>
-            </Link>
-          )}
+        {theme === "light" ? (
+          <Link href="/">
+            <Logo place="footer"></Logo>
+          </Link>
+        ) : (
+          <Link href="/">
+            <Logo place="header"></Logo>
+          </Link>
+        )}
       </div>
       <div className="flex flex-col lg:flex-row mt-5">
         <div className="flex flex-col w-full lg:w-[33%] px-4">
@@ -118,27 +117,27 @@ export default function Footer() {
         <div className="w-full lg:w-[33%] px-4 ">
           <div className="flex flex-col gap-5 sm:gap-0 sm:flex-row">
             <div className="flex text-[#b7b7b7] w-full flex-col">
-              <div className="text-[18px] font-medium text-white mb-6">About us</div>
+              <div className="text-[18px] font-medium text-white mb-6">
+                About us
+              </div>
               {footerLinks?.map((cur, index) => (
                 <div key={index} className="text-[12px] md:text-[13px] my-1">
-                  <Link
-                    href={cur?.url}
-                    className="footer-item"
-                  >
+                  <Link href={cur?.url} className="footer-item">
                     {cur?.name}
                   </Link>
                 </div>
               ))}
             </div>
             <div className="flex text-[#b7b7b7] w-full flex-col sm:pl-4">
-              <div className="text-[18px] font-medium text-white mb-6">Popular Category</div>
+              <div className="text-[18px] font-medium text-white mb-6">
+                Popular Category
+              </div>
               {categories?.map((cur: any, index: any) => (
-                <div key={index} className="text-[14px] md:text-[16px] py-[2px]">
-                  <Link
-                    href={cur?.slug}
-                    key={index}
-                    className="footer-item"
-                  >
+                <div
+                  key={index}
+                  className="text-[14px] md:text-[16px] py-[2px]"
+                >
+                  <Link href={cur?.slug} key={index} className="footer-item">
                     {cur?.name}
                   </Link>
                 </div>
@@ -149,7 +148,11 @@ export default function Footer() {
         <div className="flex flex-col items-center w-full lg:w-[33%] px-4 ">
           <div className="font-medium mt-5">Subscribe to Our Newsletter</div>
           <div className="flex w-full bg-[#403f45f9] rounded-3xl mt-4">
-            <input type="text" placeholder="contact@justreadinside.com" className="w-full py-3 bg-transparent text-white pl-5 text-sm sm:text-[16px]" />
+            <input
+              type="text"
+              placeholder="contact@justreadinside.com"
+              className="w-full py-3 bg-transparent text-white pl-5 text-sm sm:text-[16px]"
+            />
             <Link
               href="mailto:contact@justreadinside.com"
               className="flex items-center text-sm sm:text-[16px] bg-[#1867dc] text-nowrap text-white font-medium px-3 sm:px-12 lg:px-5 rounded-3xl m-1 whitespace-nowrap"

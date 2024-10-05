@@ -42,7 +42,7 @@ export default function RootLayout({
         <meta name="google-site-verification" content="L_APx2l8iVy4gmmmcok2Q4T6FXPBcwkFvA0Pc8hK_PE" />
       </head>
       <body
-        className={`${inter.className} flex flex-col w-full max-w-[1440px] h-[100vh] overflow-auto`}
+        className={`${inter.className} flex flex-col w-full max-w-[1440px] h-[100vh] overflow-auto bg-own_bg_secondary text-own_text_primary`}
         suppressHydrationWarning={true}
         style={{
           marginRight: 'auto !important',

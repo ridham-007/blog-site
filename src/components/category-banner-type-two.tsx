@@ -22,15 +22,15 @@ export default function CategoryBannerTypeTwo(
 ) {
   const router = useRouter();
   return (
-    <div className="flex flex-col w-full p-[20px] gap-[15px]">
+    <div className="flex flex-col w-full p-[20px] gap-[15px] bg-own_bg_secondary text-own_text_primary">
       <div className="flex justify-between items-center border-b border-[#e3e3e3] pb-2">
         <Link
           href={`/${props.slug ?? ""}`}
-          className="flex items-center text-[20px] text-[#050] font-semibold cursor-pointer"
+          className="flex items-center text-[20px] !text-own_green_color_primary font-semibold cursor-pointer"
         >
           {props.title.trim()} <GoChevronRight size={24} className="ml-3" />
         </Link>
-        <Link href={`/${props.slug??''}`} className="text-[16px] font-semibold text-foreground cursor-pointer">
+        <Link href={`/${props.slug??''}`} className="text-[16px] font-semibold text-own_text_gray_primary cursor-pointer">
           See all
         </Link>
       </div>
@@ -52,7 +52,7 @@ export default function CategoryBannerTypeTwo(
                   </div>
                 </CardTitle>
               </CardHeader>
-              <div className="flex text-[16px] text-foreground font-medium overflow-hidden px-2 pb-2">
+              <div className="flex text-[16px] own_text_primary font-medium overflow-hidden px-2 pb-2">
                 <CardDescription className="line-clamp-2">
                   {item?.title}
                 </CardDescription>
@@ -87,13 +87,13 @@ export default function CategoryBannerTypeTwo(
 
 export function CategoryBannerTypeTwoSkeleton() {
   return (
-    <Card className="flex flex-col w-full p-[20px] gap-[15px]">
+    <Card className="flex flex-col w-full p-[20px] gap-[15px] bg-own_bg_secondary">
       <div className="flex justify-between items-center border-b border-[#e3e3e3] pb-2">
         <div className="flex items-center">
           <div className="w-[80px] h-[30px] bg-[#d1d5db] animate-pulse rounded-sm"></div>
           <GoChevronRight size={24} className="ml-3" />
         </div>
-        <p className="text-[16px] font-semibold text-foreground cursor-pointer">
+        <p className="text-[16px] font-semibold text-own_text_gray_primary cursor-pointer">
           See all
         </p>
       </div>

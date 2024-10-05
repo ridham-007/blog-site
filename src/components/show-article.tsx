@@ -35,11 +35,11 @@ const ShowArticle = ({ article }: any) => {
     });
   },[])
   return (
-    <div className="article-container">
+    <div className="article-container bg-own_bg_secondary text-own_text_primary">
       <div className="flex flex-col pb-2 mb-2 border-b border-[#e3e3e3]">
         <h2 className="font-semibold py-1">{article?.title}</h2>
         <div className="flex w-[100%] justify-between gap-[10px] pb-0 items-center">
-          <div className="flex text-sm font-normal dark:text-[#9B9B9B] news gap-2 whitespace-nowrap py-1 text-[#444746]">
+          <div className="flex text-sm font-normal dark:text-[#9B9B9B] news gap-2 whitespace-nowrap py-1 text-own_text_primary">
             {formatDate(article?.updatedAt)}
           </div>
           <div className="flex gap-2">
@@ -70,7 +70,7 @@ export default ShowArticle
 
 export function ArticleSkeleton() {
   return (
-    <div className='article-container !px-5'>
+    <div className='article-container !px-5 bg-own_bg_secondary text-own_text_primary'>
       <div className="flex w-full flex-col gap-2">
         <div className="w-[160px] h-[35px] bg-[#d1d5db] animate-pulse rounded-sm"></div>
         {Array(12)

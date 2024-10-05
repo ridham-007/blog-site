@@ -10,7 +10,7 @@ export default async function Header() {
       <Suspense fallback={<HeaderTopSkeleton />}>
         <GetTrendingHeadLineNews />
       </Suspense>
-      <div className="header rounded-lg mt-[10px] shadow-md py-[10px] shadow-slate-200 bg-white mx-3">
+      <div className="header rounded-lg mt-[10px] shadow-md py-[10px] shadow-slate-200 bg-own_bg_secondary mx-3">
         <HeaderMiddle />
         <Suspense fallback={<HeaderBottomSkeleton />}>
           <GetHeaderCategories />

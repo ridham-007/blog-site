@@ -1,0 +1,15 @@
+html[data-theme="dark"] {
+  --primary-text-color: #fff;
+  --secondary-bg-color: #0d2132;
+  --primary-white-color: #fff;
+  --primary-black-color: #000;
+  --primary-text-black-color: #000;
+  --secondary-bg-black-color: #000;
+  --primary-text-gray-color: #9d9f9e;
+  --secondary-bg-white-heder: #fff;
+  --primary-bg-header-footer-color:#fff;
+  --primary-logo-color:#fff;
+  --primary-green-color:#fff;
+  --primary-blue-color:#fff;
+  --secondary-footer-color:#0d2132;
+}

@@ -15,13 +15,13 @@ export default function CategoryWiseTopNews({ articles }: any) {
     router.push(`/${article?.slug}`);
   };
   return (
-    <div className="flex w-full flex-wrap justify-start gap-2 h-fit">
+    <div className="flex w-full flex-wrap justify-start gap-2 h-fit ">
       {articles.map((item: any, index: any) => {
         return (
           <Link
             href={item?.slug}
             key={`CategoryWiseTopNews-${index}`}
-            className="flex flex-col flex-1 lg:basis-[32%] sm:basis-[49%] basis-[100%] lg:max-w-[32%] sm:max-w-[49%] cursor-pointer p-1 rounded-sm"
+            className="flex flex-col flex-1 lg:basis-[32%] sm:basis-[49%] basis-[100%] lg:max-w-[32%] sm:max-w-[49%] cursor-pointer p-1 rounded-sm "
             // onClick={() => handleArticleOpen(item)}
           >
             <CardHeader className="flex flex-col basis-[90%] flex-1 px-2 py-3">
@@ -34,12 +34,12 @@ export default function CategoryWiseTopNews({ articles }: any) {
                 </div>
               </CardTitle>
               {item.description && (
-                <CardDescription className="flex w-[100%] text-sm text-foreground text-ellipsis line-clamp-3">
+                <CardDescription className="flex w-[100%] text-sm text-own_text_primary text-ellipsis line-clamp-3">
                   {item.description}
                 </CardDescription>
               )}
             </CardHeader>
-            <div className="flex text-[16px] text-foreground font-medium overflow-hidden px-2 pb-2">
+            <div className="flex text-[16px] text-own_text_gray_primary font-medium overflow-hidden px-2 pb-2">
               <CardDescription className="line-clamp-2">
                 {item?.title}
               </CardDescription>
@@ -53,14 +53,14 @@ export default function CategoryWiseTopNews({ articles }: any) {
 
 export function CategoryWiseTopNewsSkeleton() {
   return (
-    <div className="flex w-full flex-wrap justify-start gap-2">
+    <div className="flex w-full flex-wrap justify-start gap-2 !bg-own_bg_secondary">
       {Array(10)
         .fill(null)
         .map((item, index) => {
           return (
             <Card
               key={`CategoryWiseTopNewsSkeleton-${index}`}
-              className="flex flex-col lg:basis-[32%] sm:basis-[49%] basis-[100%] p-1 gap-2 rounded-sm"
+              className="flex flex-col lg:basis-[32%] sm:basis-[49%] basis-[100%] p-1 gap-2 rounded-sm !bg-own_bg_secondary "
             >
               <CardHeader className="flex flex-col basis-[90%] px-2 py-3">
                 <CardTitle className="flex basis-[70%] flex-col">

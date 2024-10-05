@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { Card } from "./ui/card";
 import Link from "next/link";
@@ -6,9 +6,8 @@ import ImageWithFallback from "./image-with-fallback";
 import { useRouter } from "next/navigation";
 import { GoChevronRight } from "react-icons/go";
 
-
 export interface NewsWallProps {
-  title: string
+  title: string;
   news: {
     title: string;
     featureImage: string;
@@ -25,15 +24,22 @@ export default function DynamicNewsWall(props: NewsWallProps) {
       month: "long",
       day: "numeric",
     };
-    return (new Date(date))?.toLocaleDateString("en-US", options);
-  }
+    return new Date(date)?.toLocaleDateString("en-US", options);
+  };
 
   return (
-    <div className="flex flex-col h-auto p-5 md:border-l-[1px] news">
-      <div className="flex items-center text-[20px] font-semibold md:text-[20px] text-foreground pb-2 cursor-pointer dark:text-[#E5E5E5]">{props.title}<GoChevronRight size={24} className="ml-3" /></div>
+    <div className="flex flex-col h-auto p-5 md:border-l-[1px] news ">
+      <div className="flex items-center text-[20px] font-semibold md:text-[20px] pb-2 cursor-pointer dark:text-[#E5E5E5]">
+        {props.title}
+        <GoChevronRight size={24} className="ml-3" />
+      </div>
       {props.news?.map((cur: any, index) => {
         return (
-          <Link className="flex flex-col" key={`${props.title}-${index}`} href={cur.slug}>
+          <Link
+            className="flex flex-col"
+            key={`${props.title}-${index}`}
+            href={cur.slug}
+          >
             <hr className="py-2 text-[#e3e3e3]"></hr>
             <div
               key={`${cur.title}-${index}`}
@@ -41,18 +47,23 @@ export default function DynamicNewsWall(props: NewsWallProps) {
             >
               <div className="flex flex-col basis-[80%] min-h-[40px] gap-[5px] overflow-hidden">
                 <div className="flex flex-grow font-medium basis-full flex-col">
-                  <p className="text-[14px] text-foreground dark:text-[#C9C9C9] md:text-[14px] text-ellipsis line-clamp-2 font-semibold">
+                  <p className="text-[14px] dark:text-[#C9C9C9] md:text-[14px] text-ellipsis line-clamp-2 font-semibold !text-own_text_primary">
                     {cur?.title}
                   </p>
                 </div>
               </div>
               <div className="flex basis-[20%] overflow-hidden w-full h-full">
-                <ImageWithFallback alt={`article-placeholder-${index}`} src={cur?.featureImage}></ImageWithFallback>
+                <ImageWithFallback
+                  alt={`article-placeholder-${index}`}
+                  src={cur?.featureImage}
+                ></ImageWithFallback>
               </div>
             </div>
-            <div className="flex text-sm font-normal dark:text-[#9B9B9B] news gap-2 whitespace-nowrap py-1 text-[#444746]">
+            <div className="flex text-sm font-normal dark:text-[#9B9B9B] news gap-2 whitespace-nowrap py-1 text-own_text_gray_primary">
               {formatDate(cur?.updatedAt)}
-              <Link href={'#'} className="font-medium">Read</Link>
+              <Link href={"#"} className="font-medium">
+                Read
+              </Link>
             </div>
           </Link>
         );
@@ -63,7 +74,7 @@ export default function DynamicNewsWall(props: NewsWallProps) {
 
 export function DynamicNewsWallSkeleton(props: { label: string }) {
   return (
-    <div className="flex flex-col h-auto p-5 border-l-[1px]">
+    <div className="flex flex-col h-auto p-5 border-l-[1px] bg-own_bg_secondary">
       <div className="h-[30px] w-full md:h-[33px] items-center">
         <div className="flex h-6 flex-1 bg-[#d1d5db] rounded-full animate-pulse"></div>
       </div>
@@ -82,7 +93,10 @@ export function DynamicNewsWallSkeleton(props: { label: string }) {
                   <p className="h-[14px] bg-[#d1d5db] rounded-full animate-pulse"></p>
                 </div>
                 <div className="flex basis-[20%] overflow-hidden w-full h-full">
-                  <ImageWithFallback alt={`article-placeholder-${index}`} src={'/preview.jpg'}></ImageWithFallback>
+                  <ImageWithFallback
+                    alt={`article-placeholder-${index}`}
+                    src={"/preview.jpg"}
+                  ></ImageWithFallback>
                 </div>
               </div>
               <div className="flex h-7 py-1">

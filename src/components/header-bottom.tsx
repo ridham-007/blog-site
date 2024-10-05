@@ -39,7 +39,7 @@ export default function HeaderBottom(props: any, req: any) {
   };
 
   return (
-    <section className="flex justify-between gap-[5px] w-[100%] h-auto px-[20px] items-center">
+    <section className="flex justify-between gap-[5px] w-[100%] h-auto px-[20px] items-center  text-own_text_black_color_primary">
       <NavigationMenu className="hidden md:flex items-center justify-start max-w-[600px] gap-[10px] md:gap-[5px]">
         <NavigationMenuList>
           {[...props.categories]
@@ -100,7 +100,7 @@ export default function HeaderBottom(props: any, req: any) {
 
 export function HeaderBottomSkeleton() {
   return (
-    <section className="flex w-[100%] h-[45px] items-center px-3">
+    <section className="flex w-[100%] h-[45px] items-center px-3 bg-own_bg_secondary">
       <div className="hidden items-center w-[60%] h-[30px] gap-[10px] rounded-full md:flex">
         <div className="flex w-[10%] h-[25px] bg-[#d1d5db] rounded-full"></div>
         <div className="flex w-[10%] h-[25px] bg-[#d1d5db] rounded-full"></div>
