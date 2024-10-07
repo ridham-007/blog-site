@@ -7,7 +7,6 @@ import ThemeToggle from "./theme";
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   const [mounted, setMounted] = React.useState(false);
   const [isThemeLoaded, setIsThemeLoaded] = React.useState(false);
-  console.log({ isThemeLoaded });
 
   React.useEffect(() => {
     setMounted(true);
