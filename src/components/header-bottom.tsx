@@ -25,7 +25,7 @@ import Temperature from "./Temperature";
 import Logo from "./logo";
 import { Button } from "./ui/button";
 import Timer from "./timer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const SEPARATION_LENGTH = 9;
@@ -37,9 +37,18 @@ export default function HeaderBottom(props: any, req: any) {
       pathname === `/${item?.slug}` ? "!bg-primary !text-accent" : null
     }`;
   };
+  const [logoPlace, setLogoPlace] = useState("header");
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("data-theme");
+    if (savedTheme === "dark") {
+      setLogoPlace("footer");
+    } else {
+      setLogoPlace("header");
+    }
+  }, []);
   return (
-    <section className="flex justify-between gap-[5px] w-[100%] h-auto px-[20px] items-center  text-own_text_black_color_primary">
+    <section className="flex justify-between gap-[5px] w-[100%] h-auto px-[20px] items-center bg-own_bg_secondary text-own_text_black_color_primary">
       <NavigationMenu className="hidden md:flex items-center justify-start max-w-[600px] gap-[10px] md:gap-[5px]">
         <NavigationMenuList>
           {[...props.categories]
@@ -65,14 +74,17 @@ export default function HeaderBottom(props: any, req: any) {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="flex md:hidden">
+      <div className="flex md:hidden bg-own_bg_secondary text-own_text_primary">
         <Drawer direction="left">
           <DrawerTrigger aria-label="side-menu">
             <MenuIcon className="h-6 w-6" />
           </DrawerTrigger>
-          <DrawerContent draggable={false} className="p-2">
+          <DrawerContent
+            draggable={false}
+            className="p-2 bg-own_bg_secondary text-own_text_primary"
+          >
             <div className="flex items-center justify-between w-[100%]">
-              <Logo place={"header"} />
+              <Logo place={logoPlace} />
               <DrawerClose asChild>
                 <Button variant="secondary" size="icon">
                   <X className="h-6 w-6" />
