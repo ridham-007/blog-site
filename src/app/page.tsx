@@ -21,8 +21,8 @@ export default function Home() {
             alignItems: "center",
           }}
         >
-          <div id="div-gpt-ad-1732541591461-0"></div>
-          <div id="div-gpt-ad-1732541591461-1"></div>
+          <div id="div-gpt-ad-1732542773495-0"></div>
+          <div id="div-gpt-ad-1732542773495-1"></div>
         </div>
         <Suspense fallback={<LoadPreviewForCategoriesShimmer />}>
           <GetCategoryShortPreview />
@@ -39,8 +39,8 @@ export default function Home() {
             alignItems: "center",
           }}
         >
-          <div id="div-gpt-ad-1732541591461-2"></div>
-          <div id="div-gpt-ad-1732541591461-3"></div>
+          <div id="div-gpt-ad-1732542773495-2"></div>
+          <div id="div-gpt-ad-1732542773495-3"></div>
         </div>
       </section>
       <section className="flex flex-col flex-1 basis-[100%] sm:basis-[28%] px-2 gap-4">
@@ -59,8 +59,8 @@ export default function Home() {
             alignItems: "center",
           }}
         >
-          <div id="div-gpt-ad-1732541591461-4"></div>
-          <div id="div-gpt-ad-1732541591461-5"></div>
+          <div id="div-gpt-ad-1732542773495-4"></div>
+          <div id="div-gpt-ad-1732542773495-5"></div>
         </div>
         <Suspense fallback={<DynamicNewsWallSkeleton label="Popular" />}>
           <GetPopularNews />
