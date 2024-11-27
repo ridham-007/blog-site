@@ -40,6 +40,19 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="L_APx2l8iVy4gmmmcok2Q4T6FXPBcwkFvA0Pc8hK_PE" />
+        <Script
+          async
+          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+           id="gpt-script-banner"
+           strategy="beforeInteractive"
+           src="/scripts/loadads.js"
+           async
+           crossOrigin="anonymous"
+           type="module"
+        ></Script>
       </head>
       <body
         className={`${inter.className} flex flex-col w-full max-w-[1440px] h-[100vh] overflow-auto bg-own_bg_secondary text-own_text_primary`}
@@ -60,8 +73,16 @@ export default function RootLayout({
           {children}
           <Footer></Footer>
         </ThemeProvider>
+        <Script
+           id="gpt-script-displaying"
+           strategy="afterInteractive"
+           src="/scripts/displayads.js"
+           async
+           crossOrigin="anonymous"
+           type="module"
+        ></Script>
       </body>
-      <GoogleAnalytics gaId="G-E6JQ21SY2Q" />
+      {/* <GoogleAnalytics gaId="G-E6JQ21SY2Q" /> */}
       <Script id="" type="application/ld+json"> 
         {JSON.stringify({
           "@context": "https://schema.org/",

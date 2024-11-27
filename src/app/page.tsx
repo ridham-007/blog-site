@@ -9,14 +9,59 @@ export default function Home() {
   return (
     <main className="flex w-full flex-wrap gap-2 px-3">
       <section className="flex flex-col flex-1 basis-[100%] sm:basis-[68%] gap-4">
-        <Suspense fallback={<LoadPreviewForCategoriesShimmer/>}>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "center",
+            padding: "20px 0px",
+            minHeight: "250px",
+            gap: "50px",
+            flexWrap: "wrap",
+            alignItems: "center",
+          }}
+        >
+          <div id="div-gpt-ad-1732541591461-0"></div>
+          <div id="div-gpt-ad-1732541591461-1"></div>
+        </div>
+        <Suspense fallback={<LoadPreviewForCategoriesShimmer />}>
           <GetCategoryShortPreview />
         </Suspense>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "center",
+            padding: "20px 0px",
+            minHeight: "250px",
+            gap: "50px",
+            flexWrap: "wrap",
+            alignItems: "center",
+          }}
+        >
+          <div id="div-gpt-ad-1732541591461-2"></div>
+          <div id="div-gpt-ad-1732541591461-3"></div>
+        </div>
       </section>
       <section className="flex flex-col flex-1 basis-[100%] sm:basis-[28%] px-2 gap-4">
         <Suspense fallback={<DynamicNewsWallSkeleton label="Recent" />}>
           <GetRecentNews />
         </Suspense>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "center",
+            padding: "20px 0px",
+            minHeight: "250px",
+            gap: "50px",
+            flexWrap: "wrap",
+            alignItems: "center",
+          }}
+        >
+          <div id="div-gpt-ad-1732541591461-4"></div>
+          <div id="div-gpt-ad-1732541591461-5"></div>
+        </div>
         <Suspense fallback={<DynamicNewsWallSkeleton label="Popular" />}>
           <GetPopularNews />
         </Suspense>
@@ -25,14 +70,13 @@ export default function Home() {
   );
 }
 
-function LoadPreviewForCategoriesShimmer(){
+function LoadPreviewForCategoriesShimmer() {
   return (
     <>
-      <CategoryBannerTypeOneSkeleton/>
-      <CategoryBannerTypeTwoSkeleton/>
-      <CategoryBannerTypeOneSkeleton/>
-      <CategoryBannerTypeTwoSkeleton/>
+      <CategoryBannerTypeOneSkeleton />
+      <CategoryBannerTypeTwoSkeleton />
+      <CategoryBannerTypeOneSkeleton />
+      <CategoryBannerTypeTwoSkeleton />
     </>
-  )
+  );
 }
-
