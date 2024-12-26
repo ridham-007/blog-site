@@ -1,7 +1,7 @@
 'use client';
 import Cookies from "js-cookie";
 
-const callApiOnce = async (dataIp: any) => {
+const callApiOnce = async (dataIp: any, country: any) => {
 
   if (Cookies.get("user-set")) {
 
@@ -27,7 +27,7 @@ const callApiOnce = async (dataIp: any) => {
       origin: window.location.origin, // Use the site URL as origin
       usageCount: 1, // Set count as 1
       cookies: allCookies,
-      country: "annonymouse",
+      country: country || "annonymouse",
     };
     // Hit the API
     const apiResponse = await fetch(

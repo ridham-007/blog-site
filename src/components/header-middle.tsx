@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import callApiOnce from "@/lib/call-api-once";
 
-export default function HeaderMiddle({dataIp}: any) {
+export default function HeaderMiddle({dataIp, country}: any) {
   const pathname = usePathname();
   const navItems = [
     { text: "Home", link: "/" },
@@ -30,7 +30,7 @@ export default function HeaderMiddle({dataIp}: any) {
   }, []);
 
   useEffect(() => {
-    callApiOnce(dataIp);
+    callApiOnce(dataIp, country);
   }, []);
 
   return (

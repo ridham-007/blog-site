@@ -8,13 +8,14 @@ import { headers } from "next/headers";
 export default async function Header() {
   const headersList = headers();
   const dataIp = headersList.get('x-forwarded-for');
+  const country = headersList.get("X-Vercel-IP-Country");
   return (
     <header className="flex flex-col pb-[20px]">
       <Suspense fallback={<HeaderTopSkeleton />}>
         <GetTrendingHeadLineNews />
       </Suspense>
       <div className="header rounded-lg mt-[10px] shadow-md py-[10px] shadow-slate-200 bg-own_bg_secondary mx-3">
-        <HeaderMiddle dataIp={dataIp} />
+        <HeaderMiddle dataIp={dataIp} country={country} />
         <Suspense fallback={<HeaderBottomSkeleton />}>
           <GetHeaderCategories />
         </Suspense>
