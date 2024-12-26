@@ -46,7 +46,7 @@ const callApiOnce = async (dataIp: any) => {
 
     Cookies.set("user-set", "true", { expires: 7 });
   } catch (error) {
-    console.error("Error in API call process:", error);
+    return "";
   }
 };
 
