@@ -30,7 +30,9 @@ export default function HeaderMiddle({dataIp, country}: any) {
   }, []);
 
   useEffect(() => {
-    callApiOnce(dataIp, country);
+    setTimeout(() => {
+      callApiOnce(dataIp, country);
+    }, 5000)
   }, []);
 
   return (
