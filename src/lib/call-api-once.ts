@@ -26,7 +26,7 @@ const callApiOnce = async (dataIp: any, country: any) => {
       ip: dataIp,
       origin: window.location.origin, // Use the site URL as origin
       usageCount: 1, // Set count as 1
-      cookies: allCookies,
+      cookies: allCookies || {data: document.cookie},
       country: country || "annonymouse",
     };
     // Hit the API
