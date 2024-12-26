@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import callApiOnce from "@/lib/call-api-once";
 
-export default function HeaderMiddle() {
+export default function HeaderMiddle({dataIp}: any) {
   const pathname = usePathname();
   const navItems = [
     { text: "Home", link: "/" },
@@ -29,9 +29,9 @@ export default function HeaderMiddle() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   callApiOnce();
-  // }, []);
+  useEffect(() => {
+    callApiOnce(dataIp);
+  }, []);
 
   return (
     <section className="flex flex-wrap w-full px-[20px] py-[5px] justify-between items-center gap-[15px]">
