@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Logo from "./logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import callApiOnce from "@/lib/call-api-once";
 
 export default function HeaderMiddle() {
   const pathname = usePathname();
@@ -26,6 +27,10 @@ export default function HeaderMiddle() {
     } else {
       setLogoPlace("header");
     }
+  }, []);
+
+  useEffect(() => {
+    callApiOnce();
   }, []);
 
   return (
