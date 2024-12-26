@@ -29,9 +29,9 @@ export default function HeaderMiddle() {
     }
   }, []);
 
-  useEffect(() => {
-    callApiOnce();
-  }, []);
+  // useEffect(() => {
+  //   callApiOnce();
+  // }, []);
 
   return (
     <section className="flex flex-wrap w-full px-[20px] py-[5px] justify-between items-center gap-[15px]">
