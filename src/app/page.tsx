@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="flex w-full flex-wrap gap-2 px-3">
       <section className="flex flex-col flex-1 basis-[100%] sm:basis-[68%] gap-4">
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -23,11 +23,11 @@ export default function Home() {
         >
           <div id="div-gpt-ad-1732542773495-0"></div>
           <div id="div-gpt-ad-1732542773495-1"></div>
-        </div>
+        </div> */}
         <Suspense fallback={<LoadPreviewForCategoriesShimmer />}>
           <GetCategoryShortPreview />
         </Suspense>
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -41,13 +41,13 @@ export default function Home() {
         >
           <div id="div-gpt-ad-1732542773495-2"></div>
           <div id="div-gpt-ad-1732542773495-3"></div>
-        </div>
+        </div> */}
       </section>
       <section className="flex flex-col flex-1 basis-[100%] sm:basis-[28%] px-2 gap-4">
         <Suspense fallback={<DynamicNewsWallSkeleton label="Recent" />}>
           <GetRecentNews />
         </Suspense>
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -61,7 +61,7 @@ export default function Home() {
         >
           <div id="div-gpt-ad-1732542773495-4"></div>
           <div id="div-gpt-ad-1732542773495-5"></div>
-        </div>
+        </div> */}
         <Suspense fallback={<DynamicNewsWallSkeleton label="Popular" />}>
           <GetPopularNews />
         </Suspense>

@@ -179,7 +179,7 @@ export default function Slug({
   return (
     <main className="flex w-full flex-wrap gap-2 px-3">
       <section className="flex flex-col flex-1 basis-[100%] sm:basis-[68%] overflow-x-hidden !bg-own_bg_secondary !text-own_text_primary">
-      <div
+      {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -193,13 +193,13 @@ export default function Slug({
         >
           <div id="div-gpt-ad-1732542773495-0"></div>
           <div id="div-gpt-ad-1732542773495-1"></div>
-        </div>
+        </div> */}
         {Array.isArray(params.slug) && params.slug.length > 0 && (
           <Suspense fallback={renderShimmerContent()}>
             <LoadContentUsingSlug slug={params.slug[0]} />
           </Suspense>
         )}
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -213,13 +213,13 @@ export default function Slug({
         >
           <div id="div-gpt-ad-1732542773495-2"></div>
           <div id="div-gpt-ad-1732542773495-3"></div>
-        </div>
+        </div> */}
       </section>
       <section className="flex flex-col gap-2 flex-1 basis-[100%] sm:basis-[28%]">
         <Suspense fallback={<DynamicNewsWallSkeleton label="Recent" />}>
           <GetRecentNews />
         </Suspense>
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -233,7 +233,7 @@ export default function Slug({
         >
           <div id="div-gpt-ad-1732542773495-4"></div>
           <div id="div-gpt-ad-1732542773495-5"></div>
-        </div>
+        </div> */}
         <Suspense fallback={<DynamicNewsWallSkeleton label="Popular" />}>
           <GetPopularNews />
         </Suspense>
